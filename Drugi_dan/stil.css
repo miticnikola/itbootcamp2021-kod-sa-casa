@@ -1,0 +1,14 @@
+p {
+    background-color: yellow;
+}
+
+body {
+    text-align: center;
+}
+.podebljano {
+    font-weight: bold;
+}
+
+#iskoseno {
+    font-style: italic;
+}

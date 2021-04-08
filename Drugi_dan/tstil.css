@@ -1,0 +1,30 @@
+h2 {
+    text-align: center;
+    color: blue;
+}
+
+body {
+    background-color: wheat;
+}
+
+img {
+    border: double green;
+}
+
+.pit {
+    color: teal;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 25px;
+}
+
+#drugi {
+    color: turquoise;
+}
+
+#drugi a {
+    color: red;
+}
+
+#drugi a:hover {
+    color: green;
+}

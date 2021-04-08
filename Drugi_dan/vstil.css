@@ -1,0 +1,56 @@
+h1 {
+    color: brown;
+}
+
+h3 {
+    color: red;
+}
+
+p {
+    color: purple;
+}
+
+img {
+    height: 400px;
+    width: 300px;
+    border: 2px dashed green;
+}
+
+a {
+    color: orange;
+}
+
+body {
+    background-color: #FFD39B;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+/* Vezba 2 */
+
+.naslov2 {
+    text-align: center;
+}
+
+.dit {
+    text-align: right;
+    font-size: 24px;
+}
+
+/* Vezba 3 */
+
+h4 {
+    text-align: center;
+    color: green;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: yellow;
+}
+
