@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forme</title>
+</head>
+<body>
+    <form action="">
+        <fieldset> 
+            <legend>Osnovni podaci</legend>
+
+            <p>
+                <label>Ime i prezime</label>
+                <input type="text">
+            </p>
+
+            <p>
+                <label>Korisnicko ime:</label>
+                <input type="text" maxlength="15">
+            </p>
+
+            <p>
+                <label>Lozinka:</label>
+                <input type="password">
+            </p>
+
+            <p>
+                <label>Godine</label>
+                <input type="number" min="18" step="1">
+            </p>
+
+
+            <p>
+                <label>Pol:</label>
+                <input type="radio">
+                
+            </p>
+
+            <p>
+                <label>Datum rodjenja:</label>
+                <input type="date" max="2003-04-09">
+            </p>
+
+            <p>
+                <label>Vreme rodjenja:</label>
+                <input type="time">
+            </p>
+
+            <p>
+                <label>Drzava:</label>
+                <input type="text" placeholder="Unesite drzavljanstvo">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                Dodatne informacije
+            </legend>
+
+            <p>
+                <label>Da li zelite da primate poruke od nas?</label>
+                <input type="radio" name="poruke" value="da" checked>Da
+                <input type="radio" name="poruke" value="ne">Ne
+            </p>
+
+            <p>
+                <label>Znanje programskih jezika:</label>
+                <input type="checkbox" name="jezik" value="js">JS
+                <input type="checkbox" name="jezik" value="php">PHP
+                <input type="checkbox" name="jezik" value="pyton">Pyton
+            </p>
+
+            <p>
+                <label>CV:</label>
+                <input type="file">
+            </p>
+
+            <p>
+                <label>Odaberite kurs</label>
+                <select>
+                    <optgroup label="Nis">
+                        <option value="php">PHP</option>
+                        <option value="js">JS</option>
+                        <option value="qa">QA</option>
+                    </optgroup>
+
+                    <optgroup label="Kragujevac">
+                        <option value="php">Java</option>
+                        <option value="js">C</option>
+                        <option value="qa">C++</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <p>
+                <label>Zasto ste se opredelili za nasu kompaniju?</label>
+                <textarea cols="30" rows="3"></textarea>
+            </p>
+
+            <input type="reset" value="Resetuj">
+            <input type="submit" value="Potvrdi">
+            <input type="button" value="Proveri">
+
+        </fieldset>
+
+
+    </form>
+</body>
+</html>
