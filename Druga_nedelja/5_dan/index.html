@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        a { 
+            border-top-style: dashed;
+            border-width: 2px;
+            border-color: black;
+            border-radius: 30%;
+
+            border-left-width: 5px;
+            border-left-style: solid;
+
+            border: 2px dashed black;
+            border-left: 5px solid red;
+
+            margin: 10px 15px 20px;
+
+            padding: 10px 20px;
+            background-color: aquamarine;
+
+            /* a tag je inline i ne moze se promeniti width i height */
+        }
+            /* poceo sam ovako unutar HTML-a da pisem CSS, samo trenutno zbog preglednosti kao sto rece stefan, inace odvajam fajlove :) */
+
+            #one{
+                background-color: khaki;
+            }
+
+            #two {
+                background-color: gray;
+            }
+
+            #one, #two {
+                height: 25px;
+                /* margin: 10px; */
+                /* border: 1px solid black; */
+                padding: 10px 100px 0 15px;
+                display: inline-block;
+                width: 50%;
+                /* span je isto inline, ali smo mu dali svojstvo inline-block, i sada mozemo da mu menjamo width i height */
+            }
+
+            p {
+                border: 2px solid green;
+                margin: 10px;
+                padding: 10px;
+                background-color: aquamarine;
+                width: 350px;
+                height: 50px;
+                overflow: auto;
+            }
+
+            /* display svojstvo ima svaki element, i to po difoltu.
+            glavni su:
+
+            BLOCK - p, div, h, table 
+                (njima se moze promeniti width i height, i redjaju se jedan ispod drugog)
+
+            INLINE - link(a), span, td 
+                (redjaju se jedan za drugim, i njima ne moze da se promeni visina i sirina)
+
+            INLINE-BLOCK (to je inline, kome moze da se podesi width i height)
+            
+             */
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com">Google</a>
+    <a href="http://www.facebook.com">Facebook</a>
+
+    <br>
+
+    <span id="one">      Some text...</span><span id="two">  Some text. </span>
+
+    <p>
+        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae tempora officiis itaque repellendus facere accusamus. Fugiat nam quaerat dolorum ea.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur.
+    </p>
+</body>
+</html>
