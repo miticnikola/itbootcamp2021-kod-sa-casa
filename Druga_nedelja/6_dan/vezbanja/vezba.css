@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url("lego_pizza.jpg");
+    background-position: center;
+    height: 150px;
+    position: relative;
+    width: 100%;
+}
+
+div {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+}
+
+.center {
+    top: 45%;
+    text-align: center;
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/* Zadatak Z index - 1 */
+.text {
+    background-color: darkgrey;
+    height: 70px;
+    width: 25%;
+    position: absolute;
+    top: 110px;
+    z-index: -1;
+}
+
+
+
+/* Zadatak Z index - 2*/
+p {
+    color: black;
+    position: relative;
+    height: 50px;
+    width: 100px;
+}
+
+.p1 {
+    background-color: darkgreen;    
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    z-index: 1;
+
+}
+
+.p2 {
+    background-color: yellow;
+    top: 30px;
+}

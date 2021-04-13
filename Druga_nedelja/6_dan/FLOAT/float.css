@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+#float {
+    background-color: crimson;
+    overflow: hidden;
+}
+#float p {
+    background-color: darkkhaki;
+    float: right;
+    width: 250px;
+    margin: 20px;
+}
+
+#float p:first-child {
+    float: left;
+}
