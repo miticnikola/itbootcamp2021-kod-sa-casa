@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+ position: fixed;
+ top: 0;
+ width: 100%;
+ text-align: center;
+}
+
+nav ul {
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    width: 25%;
+    border: 1px solid white;
+    list-style-type: none;
+    background-color: black;
+}
+
+nav ul li a:hover {
+    background-color: red;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    /* stavljamo block da bi se rasirio a celom duzinom li taga */
+}
+
+.submenu {
+    position: absolute;
+    background-color: chocolate;
+    width: 25%;
+    display: none;
+}
+
+.drop-down:hover .submenu {
+    display: block;
+}
+
+/* #rest {
+    position: absolute;
+    top: 40px;
+} */
+
+body {
+    padding-top: 50px;
+}
+
+section {
+    width: 50%;
+    height: 200px;
+    background-color: coral;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* display:=, visibility
+    display: none;
+    visibility: hidden;
+*/
+
+section:nth-of-type(1) {
+    display: none;
+}
+
+section:nth-of-type(2) {
+    visibility: hidden;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    background-color: chocolate;
+    width: 25%;
+}
+
+footer ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+
+footer ul li a:hover {
+    background-color: darkgoldenrod;
+}
