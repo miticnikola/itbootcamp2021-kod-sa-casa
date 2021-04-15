@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Lucida Sans', Verdana, sans-serif;   
+}
+body {
+    background-color: #ebdbb2;
+}
+
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+/* Mobilni telefoni */
+@media only screen and (max-width: 649px){
+    [class*="col-"] {
+        width: 100%;
+    }
+} 
+
+/* Tableti */
+@media only screen and (min-width: 650px){
+    .col-t-1{
+        width: 8.33%;
+    }
+    .col-t-2{
+        width: 16.66%;
+    }
+    .col-t-3{
+        width: 25%;
+    }
+    .col-t-4{
+        width: 33.33%;
+    }
+    .col-t-5{
+        width: 41.66%;
+    }
+    .col-t-6{
+        width: 50%;
+    }
+    .col-t-7{
+        width: 58.33%;
+    }
+    .col-t-8{
+        width: 66.66%;
+    }
+    .col-t-9{
+        width: 75%;
+    }
+    .col-t-10{
+        width: 88.33%;
+    }
+    .col-t-11{
+        width: 91.66%;
+    }
+    .col-t-12{
+        width: 100%;
+    }
+}
+
+/* Large screen */
+@media only screen and (min-width: 1050px){
+    .col-1{
+        width: 8.33%;
+    }
+    .col-2{
+        width: 16.66%;
+    }
+    .col-3{
+        width: 25%;
+    }
+    .col-4{
+        width: 33.33%;
+    }
+    .col-5{
+        width: 41.66%;
+    }
+    .col-6{
+        width: 50%;
+    }
+    .col-7{
+        width: 58.33%;
+    }
+    .col-8{
+        width: 66.66%;
+    }
+    .col-9{
+        width: 75%;
+    }
+    .col-10{
+        width: 88.33%;
+    }
+    .col-11{
+        width: 91.66%;
+    }
+    .col-12{
+        width: 100%;
+    }
+}
+
+header {
+    background-color: #55534d;
+    padding: 15px;
+    color: azure;
+}
+
+/* Navigation */
+nav ul {
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+
+nav ul li {
+    width: 100%;
+    background-color: #55534d;
+    margin: 10px 0px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    color: azure;
+}
+
+nav ul li a:hover {
+    background-color: #ccb375;
+    box-shadow: 5px 5px 5px gray;
+}
+
+/* Section O nama */
+
+section {
+    padding: 17px 10px;
+}
+section h1 {
+    padding-bottom: 10px;
+}
+
+/* Aside */
+aside {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+aside h2 {
+    padding-bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #55534d;
+    padding: 15px;
+    color: azure;
+}

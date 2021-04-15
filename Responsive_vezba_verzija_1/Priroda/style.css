@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+body {
+    /* overflow: hidden; */
+}
+
+.row {
+    overflow: hidden;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.33%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    overflow: hidden;
+}
+
+h1 {
+    background-color: aqua;
+    text-align: center;
+    padding: 10px 0;
+
+}
+
+nav {
+    background-color: aquamarine;
+}
+
+nav li {
+    width: 100%;
+    border: 1px solid aqua;
+    display: block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    list-style-type: none;
+    display: block;
+    padding: 20px;
+    color: black;
+
+}
+
+nav a:hover {
+    background-color: aqua;
+}
+aside, article {
+    padding: 15px;
+    background-image: linear-gradient(darkturquoise, white);
+
+}
+
+form {
+    margin-bottom: 48px;
+}
+
+label {
+    padding: 0px 20px;
+}
+input {
+    border: 1px solid aqua;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background-color: aqua;
+    padding: 10px 0;
+}
+
+@media only screen and (max-width: 699px){
+    [class*="col-"]{
+        width: 100%;
+    }
+
+    form {
+        padding: 20px;
+    }
+    label {
+        padding: 0;
+    }
+    input {
+        margin: 5px 0px;
+    }
+}
