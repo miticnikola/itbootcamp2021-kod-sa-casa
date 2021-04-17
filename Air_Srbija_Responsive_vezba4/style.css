@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.row {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;   
+}
+.row:nth-of-type(2) {
+    padding: 0;
+}
+[class*="col-"] {
+    float: left;
+}
+
+h2 {
+    padding-bottom: 20px;
+}
+
+/* Air Srbija */
+h1 {
+    text-align: center;
+    color: #0275d8;
+}
+
+/* Main navigation */
+.main {
+    background-color: #0275d8;
+}
+.main ul {
+    padding-left: 10px;
+    overflow: hidden;
+
+}
+
+.main ul li {
+    list-style-type: none;
+    float: left;
+}
+
+.main ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: white;
+
+}
+
+.main img {
+    width: 100px;
+    display: block;
+    padding: 10px;
+    margin-left: 20px;
+
+}
+
+/* Pictures */
+.destinacije img, .letovi img, aside img {
+    width: 380px;
+}
+
+/* Destinacije - vertikalni menu */
+.destinacije nav ul li {
+    list-style-type: none;
+    margin: 10px 0px;
+
+}
+
+.destinacije nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    background-color: #eee9e9;
+}
+
+.destinacije nav ul li a:hover {
+    border-radius: 5px;
+    color: white;
+    background-color: #0275d8;
+}
+
+/* Forma */
+form label {
+    padding: 10px 0px 5px 0px;
+}
+
+form input, form textarea {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+textarea {
+    margin-bottom: 10px;
+}
+.checkbox label {
+    padding: 0px;
+    padding-left: 10px;
+}
+.btn {
+    padding: 10px 30px;
+    margin: 10px 0px;
+    border: none;
+    background-color: #0275d8;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    color: #0275d8;
+    background-color: white;
+    border: 1px solid #0275d8;
+}
+
+/* Za mobilne uredjaje za sirinu ekrana do 450px */
+@media only screen and (max-width: 1000px){
+    [class*="col-"] {
+        width: 100%;
+    }
+    
+    .main ul {
+     padding: 0;
+    }
+    
+    .main ul li {
+        float: none;
+    }
+    
+    .main ul li a {
+        color: white;
+        border-top: 1px solid white; 
+    }
+    
+    .main img {
+        width: 200px;
+        padding: 10px;
+        margin-left: 0px;
+    }
+
+    h2 {
+        padding: 20px 0px;
+    }
+    /* Pictures */
+    .destinacije img, .letovi img, aside img {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 1001px){
+    .col-1 {
+        width: 8.33%;  
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.33%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
