@@ -1,0 +1,28 @@
+* {
+    padding: 30px;
+    
+}
+.static {
+    position: static;
+    background-color: khaki;
+}
+
+.relative {
+    background-color: lightcoral;
+    position: relative;
+    left: 100px;
+}
+
+.absolute {
+    background-color: lightseagreen;
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+}
+
+.fixed {
+    background-color: limegreen;
+    position: fixed;
+    top: 30px;
+    right: 5px;
+}

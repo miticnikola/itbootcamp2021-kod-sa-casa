@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pozicioniranje vezba 1 */
+
+section .wrap {
+    width: 200px;
+    border: 2px solid black;
+    overflow: hidden;
+    padding: 20px 0px;
+}
+
+.img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px dotted red;
+    overflow: hidden;
+}
+.img img {
+    display: block;
+}
+
+.wrap p {
+    height: 150px;
+    overflow: scroll;
+}
+
+/* Vezba 2 */
+form {
+    background-image: url("Blue_pillars.jpg");
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+form h3 {
+    text-align: center;
+    background-color: #43d1af;
+    color: white;
+}
+
+form h3, form input, form textarea {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.button {
+    margin: 0;
+    color: white;
+    background-color: #43d1af;
+    border: none;
+}
+
+/* VEZBA 3 */
+nav {
+    background-color: #280071;
+    overflow: hidden;
+    margin: 50px 0px;
+}
+nav .logo { 
+    float: left;
+    padding: 5px;
+    margin-right: 70px;
+}
+
+nav ul {
+    float: left;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav .main {
+    background-color: black;
+}
+
+nav .login {
+    float: right;
+    color: white;
+    padding-right: 10px;
+}
+
+nav .login li {
+    display: block;
+}
+
+nav .login li a {
+    padding: 10px 0;
+}
+
+.login .ulog::after {
+    content: "";
+    border-right: 1px solid white;
+    margin: 10px;
+}
+
+nav .login a {
+    font-size: 0.8em;  
+}
+
+/* Vezba 4 */
+.wrapp {
+    background-color: rgb(226, 223, 223);
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.wrapp * {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #595959;
+    margin: 10px 0px; 
+    float: left;
+    text-align: center;
+
+}
+
+.wrapp > header, nav, footer {
+    width: 100%;
+}
+
+.wrapp .v4 {
+    background-color: #595959;
+    overflow: hidden;
+    margin: 0;
+}
+
+.wrapp article {
+    width: 58.5%;
+    height: 156px;
+}
+
+.wrapp article section {
+    background-color: #3b3b3b;
+    float: none;
+    height: 80%;
+}
+.wrapp aside {
+    width: 40%;
+    margin-left: 10px;
+    height: 156px;
+}
+
+.wrapp footer {
+    margin: 0;
+}
+
+
+/* Vezba 5 */
