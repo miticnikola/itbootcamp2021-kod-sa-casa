@@ -105,3 +105,20 @@ while(n <= 3){
 
     n++;
 }
+
+/* Zadatak 5
+Kreirati n proizvoljnih slika i staviti im naizmenično dva različita okvira
+*/
+
+i = 1;
+
+while(i <= 6){
+    if(i >= 1){
+        document.body.innerHTML += `<img src="ananas.jpg" style="width: 100px; border: 5px solid green; margin-right:10px;">`
+    }
+
+    if(i >= 1){
+        document.body.innerHTML += `<img src="min.jpg" style="width: 100px; border: 5px solid red; margin-right:10px;">`
+    }
+    i++;
+}
