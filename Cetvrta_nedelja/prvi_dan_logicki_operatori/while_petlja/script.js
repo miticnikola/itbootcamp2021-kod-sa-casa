@@ -294,7 +294,7 @@ Odrediti sa koliko brojeva je deljiv uneti broj k
 */
 //ispitujemo od 1 do k kojim brojem je deljiv
 let k = 10;
-let brDeljivih = 0; //on nam je kao brojac
+let brDeljivih = 0;
 i = 1;
 
 while(i <= k) {
@@ -306,4 +306,16 @@ while(i <= k) {
 }
 console.log(brDeljivih);
 
+/* zadatak 12
+Odrediti da li je dati prirodan broj n prost. Broj je prost ako je deljiv samo sa jedan i sa samim sobom.
+ */
+// broj je prost kada je deljiv sa 1 i sa samim sobom.
+
+// Prakticno se svodi na prethodni zadatak. Ako je broj delilaca == 2, to znaci da je broj prost, tj. deljiv samo samim sobom i broj 1, u suprotnom broj nije prost.
+
+if(brdeljivih == 2) {
+    console.log("Broj je prost.");
+} else {
+    console.log("Broj nije prost.")
+}
 
