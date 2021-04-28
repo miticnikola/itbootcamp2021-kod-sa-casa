@@ -88,12 +88,3 @@ while(i <= k){
 console.log(delj);
 
 // Odrediti da li je dati prirodan broj n prost. Broj je prost ako je deljiv samo sa jedan i sa samim sobom
-n = 5;
-let brDelj = 0;
-
-while(brDelj < n){
-    if(n%brDelj == 2){
-        console.log("Ovo je prost broj");
-    }
-    n++;
-}

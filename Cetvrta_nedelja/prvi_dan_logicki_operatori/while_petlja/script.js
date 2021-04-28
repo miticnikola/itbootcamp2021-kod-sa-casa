@@ -313,9 +313,40 @@ Odrediti da li je dati prirodan broj n prost. Broj je prost ako je deljiv samo s
 
 // Prakticno se svodi na prethodni zadatak. Ako je broj delilaca == 2, to znaci da je broj prost, tj. deljiv samo samim sobom i broj 1, u suprotnom broj nije prost.
 
-if(brdeljivih == 2) {
+if(brDeljivih == 2) {
     console.log("Broj je prost.");
 } else {
     console.log("Broj nije prost.")
 }
 
+// Drugi nacin - zadatak 12:
+n = 15;
+i = 2;
+while(i <= n/2){ 
+    if(n % i == 0){
+        // ako je deljivo sa i odmah znamo da nije prost broj
+        console.log(`Broj ${n} nije prost.`);
+        break; //prekida izvrsenje petlje u kojoj se nasao
+    }
+    i++;
+}
+if(i > n/2){
+    console.log(`Broj ${n} je prost.`);
+}
+
+// Treci nacin
+n = 24; // Broj cija se parnost ispituje
+i = 2; // Brojac po potencijalnim deliocima broja n
+let prime = true; //indikator (flag) da li je broj n prost
+
+while(prime && (i <= n/2)){
+    if(n%i == 0){
+        prime = false;
+    }
+    i++;
+}
+if(prime){
+    console.log(`Broj ${n} je prost.`);
+} else {
+    console.log(`Broj ${n} nije prost.`);
+}
