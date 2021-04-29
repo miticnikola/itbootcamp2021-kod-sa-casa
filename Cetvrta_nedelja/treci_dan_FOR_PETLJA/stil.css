@@ -1,0 +1,37 @@
+table {
+    border-collapse: collapse;
+
+}
+td {
+    border: 1px solid black;
+}
+.obojen {
+    background-color: indianred;
+}
+
+.boja1 {
+    background-color: aqua;
+}
+
+.boja2 {
+    background-color: lightblue;
+}
+
+.purple {
+    color: purple;
+}
+
+/* Zadatak 20 */
+
+body {
+    margin: 50px;
+}
+span {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 70px;
+    display: inline-block;
+    margin-bottom: 20px;
+}

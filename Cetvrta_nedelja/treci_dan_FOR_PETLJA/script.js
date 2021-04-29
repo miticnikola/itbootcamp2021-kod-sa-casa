@@ -201,21 +201,215 @@ arsr /= (m - n + 1);
 console.log(arsr);
 
 /* zadatak 13
-
+Prebrojati koliko brojeva od n do m je pozitivno, a koliko njih je negativno.
 */
+
+n = -7;
+m = 15;
+let brNeg = 0;
+let brPoz = 0;
+for(i = n; i <= m; i++){
+    if(i < 0){
+        brNeg++;
+    } else if(i > 0){
+        brPoz++;
+    }
+}
+console.log(`Negativno je ${brNeg} n broja, pozitivno je ${brPoz} broja n`);
 
 /* zadatak 14
-
+Prebrojati koliko je brojeva od 5 do 50 koji su deljivi sa 3 ili sa 5.
 */
+
+let count = 0;
+
+for(i = 5; i <= 50; i++){
+    if((i % 3 == 0) || (i % 5 == 0)){
+        count++;
+    }
+}
+console.log(count);
 
 /* zadatak 15
+ Prebrojati i izračunati sumu brojeva od n do m kojima je poslednja cifra 4 i parni su. */
+ n = 5;
+ m = 46;
+ suma = 0;
+ for(i = n; i <= m; i++){
+     if(i % 10 == 4){
+         suma += i;
+        }
+    }
+    console.log(suma);
 
-*/
+/*
+16 zadatak
+Odrediti sumu brojeva od n do m koji nisu deljivi brojem a
+ */
+n = 7;
+m = 86;
+a = 6;
+suma = 0;
 
-/* zadatak 16
-
-*/
+for(i = n; i <= m; i++){
+    if(i % a == 1){
+        suma += i;
+    }
+}
+console.log(suma);
 
 /* zadatak 17
+Odrediti proizvod brojeva od n do m koji su deljivi brojem a
+*/
+n = 3;
+m = 27;
+a = 4;
+proiz = 1;
+
+for(i = n; i <= m; i++){
+    if(i % a == 0){
+        proiz *= i; 
+    }
+}
+console.log(proiz);
+
+
+
+
+/* ZADATAK 18
 
 */
+
+//Prvi nacin
+let redovi = 6;
+let tabela = `<table>`;
+
+for(i = 1; i <= redovi; i++){
+    if(i % 2 == 0){
+
+        tabela +=
+         `
+         <tr class="obojen">
+         <td>Tekst</td>
+         <td>Tekst</td>
+         </tr>
+         `;
+    } else {
+        tabela +=
+        `
+        <tr class="boja2">
+        <td>Tekst</td>
+        <td>Tekst</td>
+        </tr>
+        `
+    }
+}
+tabela += `</table>`;
+document.body.innerHTML += tabela;
+
+// Pojednostavljen prvi nacin
+redovi = 6;
+tabela = `<table>`;
+
+for(i = 1; i <= redovi; i++){
+    if(i % 2 == 0){
+
+        tabela +=`<tr class="obojen">`;
+    } else {
+        tabela +=`<tr class="boja2">`
+    }
+    tabela += 
+    `
+            <td>Tekst</td>
+            <td>Tekst</td>
+        </tr>
+    `;
+}
+tabela += `</table>`;
+document.body.innerHTML += tabela;
+
+
+let element = document.getElementById("naslov");
+element.innerHTML += "*****";
+// element.innerHTML += "*****" + element.innerHTML; //Ako zelimo da dodamo ***** pre teksta u elementu
+
+
+// Drugi nacin
+let htmlTabela = document.getElementById("mojaTabela");
+
+for(i = 1; i <= redovi; i++){
+    if(i % 2 == 0){
+    htmlTabela.innerHTML += 
+    `
+        <tr class="boja1">
+            <td>Tekst</td>
+            <td>Tekst</td>
+        </tr>
+    `;
+} else {
+    htmlTabela.innerHTML += 
+    `
+        <tr class="boja2">
+            <td>Tekst</td>
+            <td>Tekst</td>
+        </tr>
+    `;
+}
+}
+
+// ZADATAK 19 Koristeći for petlju kreirati neuređenu listu sa ugnježdenim elementima, kao što je prikazano na slici sa desne strane.
+
+let brLi = 10;
+let lista = `<ul>`;
+
+for(i = 1; i <= brLi; i++){
+    lista +=`<li>Element${i}</li>`;
+    if(i % 3 == 2){
+        i++;
+        lista +=
+        `
+            <ul>
+                <li class="purple">Element ${i}</li>
+            </ul>
+        `;
+    } 
+}
+
+lista += `</ul>`
+
+document.body.innerHTML += lista;
+
+
+// drugi nacin
+brLi = 10;
+lista = `<ul>`;
+
+for(i = 1; i <= brLi; i++){
+    if(i % 3 == 0){
+        lista +=
+        `
+            <ul>
+                <li class="purple">Element ${i}</li>
+            </ul>
+        `;
+    } else {
+        lista +=`<li>Element${i}</li>`;
+    }
+}
+
+lista += `</ul>`
+
+document.body.innerHTML += lista;
+
+/* 20 zadatak
+Kreirati 64 span elemenata i rasporediti ih kao na slici desno, koristeći for petlju
+ */
+
+let brSpan = 64;
+
+for(i = 1; i <= brSpan; i++){
+    document.body.innerHTML += `<span>${i}</span>`;
+    if(i % 8 == 0){
+        document.body.innerHTML += `<br>`;
+    }
+}

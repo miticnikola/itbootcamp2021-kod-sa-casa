@@ -350,3 +350,4 @@ if(prime){
 } else {
     console.log(`Broj ${n} nije prost.`);
 }
+
