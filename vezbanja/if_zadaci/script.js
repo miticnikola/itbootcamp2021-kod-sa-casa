@@ -165,11 +165,18 @@ if(hour >= end){
 // ispisati DA ukoliko se smene lekara preklapaju, u suprotnom ispisati NE.
 // (Ne može se desiti da lekar počne smenu pre ponoći, a završi sa smenom nakon ponoći, ovo se podrazumeva i ne ispitivati doatno)
 let poc = 8;
-let kraj = 15;
+let kraj = 14;
 
-let poc1 = 14;
+let poc1 = 13;
 let kraj1 = 20;
 
+if(kraj <= poc1){
+    console.log('Nema poklapanja');
+} else if(kraj1 <= poc){
+    console.log('Nema poklapanja');
+} else {
+    console.log("Radno vreme se poklapa.");
+}
 
 
 // Za uneti broj ispitati da li je paran ili nije. 
@@ -320,17 +327,31 @@ if(year % 4 == 0 && year % 100 != 0){
 }
 
 /* Jedan butik ima radno vreme od 9h do 20h radnim danima, a vikendom od 10h do 18h. Preuzeti dan i vreme sa računara i ispitati da li je butik trenutno otvoren. */
-dan = date.getDay();
-console.log(dan);
-vreme = date.getHours();
-console.log(vreme);
 
+dan = date.getDay();
+vreme = date.getHours();
 
 let startR = 9;
 let endR = 20;
 
 let startV = 10;
 let endV = 18;
+
+if(dan == 0 || dan == 6){
+    if( vreme >= startV && vreme < endV){
+        console.log("Butik je otvoren");
+    } else {
+        console.log("Butik je zatvoren");
+    }
+} else if(dan < 6){
+    if(vreme >= startR && vreme < endR){
+        console.log("Butik je otvoren.")
+    } else {
+        console.log("Butik je zatvoren.")
+    }
+} else {
+    console.log("Unesite pravilno dan.")
+}
 
 
 
