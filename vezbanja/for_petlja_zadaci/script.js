@@ -191,3 +191,86 @@ for(i = n; i <= m; i++){
     }
 }
 console.log(proizvod);
+
+/* Napraviti tabelu sa 6 redova.
+Svaki red tabele treba da ima po dve ćelije (dve kolone).
+Svakom parnom redu dodati klasu „obojen“.
+Korišćenjem CSS-a, klasi obojen postaviti proizvoljnu boju pozadine. */
+
+let row = 6;
+let tabela = document.getElementById("tabela");
+
+for(i = 1; i <= row; i++){
+    if(i % 2 == 0){
+        tabela.innerHTML += 
+        `
+            <tr class="obojeno">
+                <td>Tekst</td>
+                <td>Tekst</td>    
+            </tr>
+        `;
+    } else {
+        tabela.innerHTML +=
+        `
+        <tr>
+            <td>Tekst</td>
+            <td>Tekst</td>    
+        </tr>
+    `;
+    }
+}
+
+
+
+// Zadatak isti kao prethodni samo slucaj kada bi imali 9 reda i redove sa 3 razlicite naizmenicne boje
+row = 9;
+tabela = document.getElementById("tabela1");
+
+for(i = 1; i <= row; i++){
+    if(i % 3 == 1){
+        tabela.innerHTML += 
+            `
+                <tr class="obojeno">
+                    <td>Text</td>
+                    <td>Text</td>
+                </tr>
+            `;
+    } else if(i % 3 == 2){
+        tabela.innerHTML += 
+        `
+            <tr class="obojeno1">
+                <td>Text</td>
+                <td>Text</td>
+            </tr>
+        `;
+    } else {
+        tabela.innerHTML += 
+            `
+                <tr>
+                    <td>Text</td>
+                    <td>Text</td>
+                </tr>
+            `;
+    }
+}
+
+
+// Drugi nacin zadatka
+row = 6;
+tabela = `<table>`;
+
+for(i = 1; i <= row; i++){
+    if(i % 2 == 0){
+        tabela += `<tr class="obojeno">`;
+    } else {
+        tabela += `<tr>`;
+    }
+    tabela += 
+        `
+                <td>Tekst</td>
+                <td>Tekst</td>
+            </tr>
+        `
+    }
+    tabela += `</tabela>`
+    document.body.innerHTML += tabela;
