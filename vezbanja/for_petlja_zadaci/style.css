@@ -14,3 +14,13 @@ td {
 .obojeno1 {
     background-color: cadetblue;
 }
+
+span {
+    display: inline-block;
+    border: 1px solid black;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    text-align: center;
+
+}

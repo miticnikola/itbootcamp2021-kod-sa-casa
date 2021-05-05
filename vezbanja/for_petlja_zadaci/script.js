@@ -315,3 +315,34 @@ for(i = 1; i <= el; i++){
 }
 ul += `</ul>`;
 document.body.innerHTML += ul;
+
+// Kreirati 64 span elemenata i rasporediti ih kao na slici desno, koristeći for petlju.
+
+let span = 64;
+
+for(i = 1; i <= span; i++){
+    document.body.innerHTML += `<span>${i}</span>`;
+
+    if(i % 8 == 0){
+        document.body.innerHTML += `<br><br>`; 
+    }
+}
+
+// Kreirati 64 span elemenata i rasporediti ih kao na slici desno, tako da elementi izgledaju kao polja šahovske table. U realizaciji ovog zadatka koristiti for petlju.
+
+span = 64;
+
+for(i = 1; i <= span; i++){
+    
+    if(i % 2 == 0 && i <= 8 || i % 2 == 0 && i >= 17 && i <= 24 || i % 2 == 0 && i >= 33 && i <= 40 || i % 2 == 0 && i >= 49 && i <= 56){
+        document.body.innerHTML += `<span class="obojeno1">${i}</span>`;
+    } else if(i % 2 != 0 && i >= 9 && i <= 16 || i % 2 != 0 && i >= 25 && i <= 32 || i % 2 != 0 && i >= 41 && i <= 48 || i % 2 != 0 && i >= 57 && i <= 64){ 
+        document.body.innerHTML += `<span class="obojeno1">${i}</span>`;
+    } else {
+        document.body.innerHTML += `<span>${i}</span>`;
+    }
+
+    if(i % 8 == 0){
+        document.body.innerHTML += `<br><br>`;
+    }
+}
