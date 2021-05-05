@@ -274,3 +274,44 @@ for(i = 1; i <= row; i++){
     }
     tabela += `</tabela>`
     document.body.innerHTML += tabela;
+
+
+// Koristeći for petlju kreirati neuređenu listu sa ugnježdenim elementima, kao što je prikazano na slici sa desne strane.
+let el = 10;
+let ul = `<ul>`;
+
+for(i = 1; i <= el; i++){
+    if(i % 3 == 0){
+        ul += 
+        `
+        <ul>
+        <li class="obojeno1">Element ${i}</li>
+        </ul>
+        `;
+    } else {
+        ul += `<li>Element ${i}</li>`;
+    }
+}
+
+ul += `</ul>`;
+document.body.innerHTML += ul;
+
+
+// drugi nacin // prvi je prakticniji
+el = 10;
+ul = `<ul>`;
+
+for(i = 1; i <= el; i++){
+    ul += `<li>Element ${i}</li>`;
+    if(i % 3 == 2){
+        i++;
+        ul += 
+            `
+                <ul>
+                    <li class="obojeno">Element ${i}</li>
+                </ul>
+            `;
+    }
+}
+ul += `</ul>`;
+document.body.innerHTML += ul;
