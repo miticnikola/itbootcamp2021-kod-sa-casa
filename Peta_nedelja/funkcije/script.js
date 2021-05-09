@@ -267,7 +267,7 @@ slika(img);
 slika(`0.jpg`);
 slika(`1.jpg`);
 slika(`3.jpg`);
-slika(`4.jpg`);
+// slika(`4.jpg`);
 
 
 //6. Napraviti funkciju koja za unetu boju na engleskom jeziku boji tekst paragrafa u tu boju.
@@ -328,6 +328,15 @@ console.log(deljivSaTri(5, 15));
 
 // 9. Napraviti funkciju sumiraj koja određuje sumu brojeva od n do m. 
 // Brojeve n i m proslediti kao parametre funkciji.
+function sumiraj(n, m){
+    let suma = 0;
+    for(i = n; i <= m; i++){
+        suma += i;
+    }
+    return suma;
+}
+
+console.log(sumiraj(5, 10));
 
 
 // 10. Napraviti funkciju množi koja određuje proizvod brojeva od n do m.
