@@ -341,4 +341,13 @@ console.log(sumiraj(5, 10));
 
 // 10. Napraviti funkciju množi koja određuje proizvod brojeva od n do m.
 // Brojeve n i m proslediti kao parametre funkciji.
+function mnozi(n, m){
+    let proizvod = 1;
+    for(i = n; i <= m; i++){
+        proizvod *= i;
+    }
+    return proizvod;
+}
+
+console.log(mnozi(5, 10));
 
