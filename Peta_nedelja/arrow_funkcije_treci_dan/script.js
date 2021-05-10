@@ -238,3 +238,41 @@ Na igrama bez granica, ekipi je postavljen zadatak da za što kraće vreme pređ
 npr: t=15, p=20, n=25, čekanje je 0s
 npr: t=15, p=10, n=12, čekanje je 7s
 */
+
+// let t = 15;; // takmicaru toliko treba od polazne tacke do mosta
+// let p = 14; // nakon koliko od pocetka kretanja takmicara most pocinje da se dize
+// let n = 12; // period od pocetka podizanja, do spustanja mosta - prelaz tada nije moguc
+
+
+// let polazak = (t, p, n) => {
+// if(p - t < 0){
+//     let ostatak = n + (p - t); //vreme koliko ce takmicar morati da ceka
+//     // console.log(ostatak);
+//     let cekanje = t - ostatak;
+
+//     return cekanje;
+// } else {
+//     return 0;
+
+// }
+// }
+
+// console.log(`Tim treba da krene sa starta ${polazak(15, 20, 25)} sek, nakon pocetka merenja vremena kako bi prosao poligon bez zaustavljanja.`);
+
+
+
+let polaz = (t, p, n) => {
+    if(p > t){
+        let cekanje = 0;
+        return cekanje;
+    } else if(p < t){
+        let cekanje = n + (t - p);
+        let podjiNakon = t - cekanje;
+
+        return Math.abs(podjiNakon);
+    }
+}
+
+// console.log(polaz(15, 14, 35));
+
+console.log(`Tim treba da krene sa starta ${polaz(15, 14, 45)} sek, nakon pocetka merenja vremena kako bi prosao poligon bez zaustavljanja.`);
