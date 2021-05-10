@@ -286,22 +286,50 @@ pColor("aqua");
 // Pitanje: Kako bismo realizovali ovaj zadatak da se tražio n-ti mesec u godini?
 
 function sedmiDan(n){
-    if(n == 0 || n == 7){
+    if(n % 7 == 0){
         return "Nedelja";
-    } else if(n == 6){
+    } else if(n % 7 == 6){
         return "Subota";
-    } else if(n == 1){
+    } else if(n % 7 == 1){
         return "Ponedeljak";
-    } else if(n == 2){
+    } else if(n % 7 == 2){
         return "Utorak";
-    } else if(n == 3){
+    } else if(n % 7 == 3){
         return "Sreda";
-    } else if(n == 4){
+    } else if(n % 7 == 4){
         return "Cetvrtak";
-    } else if(n == 5){
+    } else if(n % 7 == 5){
         return "Petak";
-    } else {
-        return "Unesite pravi redni broj dana.";
+    }
+}
+
+
+function sedmiDan1(m){
+    let ostatak = n % 7;
+    switch(ostatak){
+        case 0:
+            console.log("Nedelja");
+            break;
+        case 1:
+            console.log("Ponedeljak");
+            break;
+        case 2:
+            console.log("Utorak");
+            break;
+        case 3:
+            console.log("Sreda");
+            break;
+        case 4:
+            console.log("Cetvrtak");
+            break;
+        case 5:
+            console.log("Petak");
+            break;
+        case 6:
+            console.log("Subota");
+            break;
+        default:
+            console.log("Neki broj");
     }
 }
 // Isto kao i za dane, samo sto bih isao da mesec = date.getMonth()+1;
@@ -311,11 +339,13 @@ let day = date.getDay();
 
 console.log(sedmiDan(day));
 
+
+
 // 8. Napraviti funkciju deljivSaTri koja se koristi u ispisivanju brojeva koji su deljivi sa tri u intervalu od n do m.
 // Prebrojati koliko ima ovakvih brojeva od n do m.
 function deljivSaTri(n, m){
     let brDelj = 0;
-    for(i = n; i <= m; i++){
+    for(let i = n; i <= m; i++){
         if(i % 3 == 0){
             brDelj += 1;
         }
@@ -330,7 +360,7 @@ console.log(deljivSaTri(5, 15));
 // Brojeve n i m proslediti kao parametre funkciji.
 function sumiraj(n, m){
     let suma = 0;
-    for(i = n; i <= m; i++){
+    for(let i = n; i <= m; i++){
         suma += i;
     }
     return suma;
@@ -343,7 +373,7 @@ console.log(sumiraj(5, 10));
 // Brojeve n i m proslediti kao parametre funkciji.
 function mnozi(n, m){
     let proizvod = 1;
-    for(i = n; i <= m; i++){
+    for(let i = n; i <= m; i++){
         proizvod *= i;
     }
     return proizvod;
@@ -351,3 +381,53 @@ function mnozi(n, m){
 
 console.log(mnozi(5, 10));
 
+
+// 11. Napraviti funkciju koja vraća aritmetičku sredinu brojeva od n do m.
+// Brojeve n i m proslediti kao parametre funkciji.
+function artSr(n, m){
+    let brojac = 0;
+    let suma = 0;
+    for(let i = n; i <= m; i++){
+        brojac += 1;
+        suma += i;
+    }
+    let artSred = suma / brojac;
+    return artSred;
+}
+
+console.log(artSr(5, 10));
+
+
+//12. Napisati funkciju koja vraća aritmetičku sredinu brojeva kojima je poslednja cifra 3 u intervalu od n do m. Brojeve n i m proslediti kao parametre funkciji.
+function artSr3(n, m){
+    let brojac = 0;
+    let suma = 0;
+    for(let i = n; i <= m; i++){
+        if(i % 10 == 3){
+            brojac += 1;
+            suma += i;
+    }
+}
+    let artSred3 = suma / brojac;
+    return artSred3;
+}
+
+console.log(artSr3(2, 24));
+
+//13. Napisati funkciju kojoj se prosleđuje ceo broj a ona ispisuje tekst koji ima prosleđenu veličinu fonta.
+function font(br){
+    document.body.innerHTML += `<p style="font-size: ${br}px">LOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOremLOrem</p>`;
+}
+
+font(25);
+
+
+
+//14. Napisati funkciju koja pet puta ispisuje istu rečenicu, a veličina fonta rečenice treba da bude jednaka vrednosti iteratora. 
+function repeat(){
+    for(let i = 1; i <= 5; i++){
+        document.body.innerHTML += `<p style="font-size: ${i}em;">Ovo je recenica</p>`;
+    }
+}
+
+repeat();
