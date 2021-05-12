@@ -97,3 +97,38 @@ for(i = 0; i < br.length; i++){
     }
 }
 console.log(brParnih);
+
+
+
+                    //================== FUNKCIJE ========================
+
+// Pilot želi da napravi program gde unosi vreme polatanja (sat poletanja između 0 i 23 i minut poletanja aviona između 0 i 59) i vreme sletanja aviona (sat sletanja između 0 i 23 i minut sletanja aviona između 0 i 59). Napisati funkciju kojoj se prosleđuje vreme poletanja i vreme sletanja aviona, a ona pilotu u konzoli ispisuje koliko časova i minuta je trajao njegov let. Pretpostaviti da su poletanje i sletanje aviona u istom danu i da je ispravno uneo vrednosti poletanja i sletanja.
+
+function let(pSat, pMin, sSat, sMin){
+    let polet = pSat * 60 + pMin;
+    let slet = sSat * 60 + sMin;
+
+    let duzinaLeta = slet - polet;
+
+    if(duzinaLeta % 60 != 0){
+        let h = Math.floor(duzinaLeta/60);
+        let min = duzinaLeta % 60;
+
+        if(h == 0){
+            console.log(`Let je trajao ${min}min.`);
+        } else if(duzinaLeta < 0){
+            console.log("Ispravno unesite vrednosti za vreme poletanja i sletanja.");
+        } else {
+        console.log(`Let je trajao ${h}h i ${min}min.`);
+        }
+
+    } else {
+        console.log(`Let je trajao ${h}h.`);
+    }
+}
+
+let(12, 5, 16, 13);
+
+
+
+// Specijalitet jedne poslastičare je slatkiš po imenu jaban koje se pravi od jabuka i banana. Za jednu porciju ovog slatkiša potrebme su 2 jabuke i 3 banane. Poslastičara jabuke i banane dobija od jednog lokalnog dobavljača. U svakoj isporuci ima 20% oštećenih jabuka koje se ne mogu iskoristiti za pripremu jaban slatkiša. Napisati funkciju koja za prosleđeni broj isporučenih jabuka i prosleđeni broj isporučenih banana, određuje i vraća koliko porcija jaban slatkiša je moguće da poslastičar napravi. Broj oštećenih jabuka zaokružiti na najbliži ceo broj.
