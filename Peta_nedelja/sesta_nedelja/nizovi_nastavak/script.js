@@ -213,26 +213,28 @@ stringovi = ["Milos", "Milan", "Goran", "Aleksandar"];
 // rec.includes("a") == vraca true ako sadrzi slovo "a", a ako ne sadrzi vraca false - mogu se ubacivati i reci ne mroa samo jedno slovo
 
 let brAstringova = 0;
-
 for(let i = 0; i < stringovi.length; i++){
     let rec = stringovi[i];
-
+    
     if(rec.includes('a') || rec.includes("A")){
         brAstringova++;
-
+        
     }
 }
 console.log(brAstringova);
 
 // 22. zadatak == nacin 2 sa casa:
 let brAstringova2 = 0;
+// Ova for petlja ide element po element u nizu
 for(let i = 0; i < stringovi.length; i++){
     let rec = stringovi[i];
+
+    // Ovo for petlja ide slovo po slovo u reci
     // rec od j je karakter u reci (slovo u reci)
     for(let j = 0; j < rec.length; j++){
         if(rec[j] == 'a' || rec[j] == "A"){
             brAstringova2++;
-            break;
+            break; // j = rec.length;
         }
 
     }

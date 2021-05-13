@@ -131,4 +131,24 @@ let(12, 5, 16, 13);
 
 
 
-// 2. Specijalitet jedne poslastičare je slatkiš po imenu jaban koje se pravi od jabuka i banana. Za jednu porciju ovog slatkiša potrebme su 2 jabuke i 3 banane. Poslastičara jabuke i banane dobija od jednog lokalnog dobavljača. U svakoj isporuci ima 20% oštećenih jabuka koje se ne mogu iskoristiti za pripremu jaban slatkiša. Napisati funkciju koja za prosleđeni broj isporučenih jabuka i prosleđeni broj isporučenih banana, određuje i vraća koliko porcija jaban slatkiša je moguće da poslastičar napravi. Broj oštećenih jabuka zaokružiti na najbliži ceo broj.
+// 2. Specijalitet jedne poslastičare je slatkiš po imenu jaban koje se pravi od jabuka i banana. Za jednu porciju ovog slatkiša potrebme su 2 jabuke i 3 banane. Poslastičar jabuke i banane dobija od jednog lokalnog dobavljača. U svakoj isporuci ima 20% oštećenih jabuka koje se ne mogu iskoristiti za pripremu jaban slatkiša. Napisati funkciju koja za prosleđeni broj isporučenih jabuka i prosleđeni broj isporučenih banana, određuje i vraća koliko porcija jaban slatkiša je moguće da poslastičar napravi. Broj oštećenih jabuka zaokružiti na najbliži ceo broj.
+
+let jaban = (jabuka, banana) => {
+    let loseJabuke = Math.round(jabuka * (20/100));
+    let dobreJabuke = jabuka - loseJabuke;
+
+    let porcijeSaJab = Math.floor(dobreJabuke / 2);
+    let porcijeSaBan = Math.floor(banana / 3);
+    console.log(porcijeSaBan, porcijeSaJab);
+
+    if(porcijeSaBan > porcijeSaJab){
+        console.log(`Moze se napraviti ${porcijeSaJab} jabana.`);
+    } else {
+        console.log(`Moze se napraviti ${porcijeSaBan} jabana.`);
+
+    }
+
+
+}
+
+jaban(250, 200);
