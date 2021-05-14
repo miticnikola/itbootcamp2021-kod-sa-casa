@@ -96,7 +96,7 @@ niz.forEach( ispis => {
 });
 
 // 2. Odrediti zbir elemenata celobrojnog niza.
-let br = [2, 67, 13, 11, 98];
+let br = [67, 98, 13, 2, 11];
 let zbir = 0;
 
 br.forEach( e => {
@@ -180,21 +180,31 @@ br.forEach(e => {
 console.log(`Minimalna vrednost celobrojnog niza je ${minVr}`);
 
 
-
-// ODRADI PONOVO
-
 // 7. Odrediti indeks maksimalnog elementa celobrojnog niza.
 let indexMaks = 0;
 maxVr = 0;
 br.forEach((e, i) => {
     if(maxVr < e){
         maxVr = e;
-        indexMaks = maxVr;
+        indexMaks = i;
     }
 });
 console.log(indexMaks);
 
 // 8. Odrediti indeks minimalnog elementa celobrojnog niza.
+let indeksMin = niz => {
+    let minInd = 0;
+    let min = niz[0];
+
+    niz.forEach((e, i) => {
+        if(min > e){
+            min = e;
+            minInd = i;
+        }
+    });
+    return minInd;
+}
+console.log(indeksMin(br));
 
 
 /* 
@@ -244,4 +254,6 @@ let brojSvojstvoNiz = (niz, svojstvo) => { //svojstvo je callback funkcija
 }
 
 console.log(`Broj elemenata sa maksimalnom vrednoscu jednak je: ` + brojSvojstvoNiz(c, maxNiz));
+
+// console.log(`Broj elemenata sa minimalnom vrednoscu jednak je: ` + brojSvojstvoNiz(c, minNiz)); //odraditi ovo
 
