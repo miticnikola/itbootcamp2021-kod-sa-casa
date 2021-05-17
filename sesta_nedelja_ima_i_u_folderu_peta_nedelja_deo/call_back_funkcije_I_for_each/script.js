@@ -207,6 +207,7 @@ let indeksMin = niz => {
 console.log(indeksMin(br));
 
 
+
 /* 
 Napisati funkciju koja vraca broj elemenata sa:
 1. maksimalnom vrednoscu //---- nadovezuje se na 5 zadatak =======
