@@ -52,4 +52,4 @@ console.log(user);
 user.login();
 user.logBlogs();
 user.test();
-console.log(this);
+console.log(this); // daje informacije od windows objektu
