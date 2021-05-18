@@ -3,7 +3,7 @@ let dan = {
     kisa: true,
     sunce: true,
     oblacno: true,
-    temperature: [15, 19, 20, 21, 30, 13, 11],
+    temperature: [15, 19, 20, 21, 29, 13, 11],
     // 1. Metoda: Odredjuje prosecnu temperaturu izmerenu tog dana
     prosecna: function(){
         let suma = 0;
@@ -164,6 +164,7 @@ let dan = {
                 tropskeTemp++;
             }
         }
+        
         if(tropskeTemp == this.temperature.length){
             return true;
         } else {
@@ -181,6 +182,7 @@ let dan = {
                 return true;
             }
         }
+        return false;
 
     }
 };
