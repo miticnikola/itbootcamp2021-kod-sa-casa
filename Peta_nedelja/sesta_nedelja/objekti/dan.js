@@ -183,7 +183,6 @@ let dan = {
             }
         }
         return false;
-
     }
 };
 
