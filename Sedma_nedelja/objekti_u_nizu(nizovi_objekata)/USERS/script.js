@@ -56,7 +56,7 @@ let user2 = {
 let user3 = {
     username: 'Milena',
     age: 14,
-    blogs: [blog1, blog2],
+    blogs: [blog1],
     sumLikes: function(){
         let sum = 0;
         this.blogs.forEach(blog => {
@@ -132,4 +132,49 @@ users.forEach(user => {
     if(likes > 100){
         console.log(user.username);
     }
+});
+
+// 5. zadatak == Ispisati naslove onih blogova koji imaju natprosečan broj pozitivnih ocena
+let avgGeneral; // prosecna ocena u odnosu na SVE BLOGOVE svih korisnika
+let sumGeneral = 0;
+let countGeneral = 0;
+
+
+// 1. Nacin
+users.forEach(user => {
+    user.blogs.forEach(blog => {
+        sumGeneral += blog.likes;
+        countGeneral++;
+    });
+});
+avgGeneral = sumGeneral / countGeneral;
+console.log(avgGeneral);
+
+users.forEach(user =>{
+    user.blogs.forEach(blog => {
+        if(avgGeneral < blog.likes){
+            console.log(blog.title);
+        }
+    });
+});
+
+// 2. Nacin
+let avgGeneral1; // prosecna ocena u odnosu na SVE BLOGOVE svih korisnika
+let sumGeneral1 = 0;
+let countGeneral1 = 0;
+
+users.forEach(user => {
+    sumGeneral1 += user.sumLikes();
+    countGeneral1 += user.blogs.length;
+});
+
+avgGeneral1 = sumGeneral1 / countGeneral1;
+console.log(avgGeneral1);
+
+users.forEach(user =>{
+    user.blogs.forEach(blog => {
+        if(avgGeneral1 < blog.likes){
+            console.log(blog.title);
+        }
+    });
 });
