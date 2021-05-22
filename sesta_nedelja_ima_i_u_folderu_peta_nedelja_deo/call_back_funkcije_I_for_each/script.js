@@ -87,7 +87,7 @@ b.forEach((e, i) => {
 });
 
 
-// Zadaci sa if prezentacije (od pre neki dan)
+// Zadaci sa nizovi prezentacije (od pre neki dan)
 // 1. Ispisati sve elemente niza od 5 stringova.
 let niz = ["pera", "mika", "laza", "zika", "melanija"];
 
