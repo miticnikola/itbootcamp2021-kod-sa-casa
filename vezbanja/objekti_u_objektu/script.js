@@ -196,4 +196,3 @@ let ispodProsNeg = niz => {
 }
 
 ispodProsNeg(users);
-
