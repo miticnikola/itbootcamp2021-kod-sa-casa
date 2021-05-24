@@ -107,3 +107,43 @@ console.log(sveSlike3);
 
 
 // Sve elemente ispisati u konzoli.
+
+
+
+// PREDAVANJA == PONEDELJAK 24.05
+
+// Menjanje elemenata iz HTML-a:
+console.log(r1.id);
+console.log(r1.class); //ne postoji svojstvo
+console.log(r1.innerHTML);
+r1.innerHTML = "Sadrzaj elementa je text dodat iz JS.";
+
+// Prvi link kome je href u html google.com
+let prviLink = document.querySelector("a");
+prviLink.href = "http://www.wikipedia.com";
+
+// Dodajemo atribut
+prviLink.setAttribute('target', '_blank');
+
+prviLink.setAttribute('href', 'http://wikipedia.org');
+
+prviLink.innerHTML = "Wikipedia"; // INNER HTML ne moze da menja preko setAtribute, ali moze samo sa prviLink.innerHTML
+
+prviLink.style.color ="red";
+prviLink.style.backgroundColor = "khaki";
+prviLink.style.textDecoration = "none";
+prviLink.style.border ="3px solid green";
+
+prviLink.setAttribute('style', 'color: red; background-color: #adff29; text-decoration: none; border: 3px solid green;');
+
+//Postaviti crveni border svim linkovima na stranici
+r7.forEach(link => {
+    link.style.border = "3px solid red";
+});
+
+// Drugi nacin
+let linkovi = document.getElementsByTagName("a");
+
+for(let i = 0; i < linkovi.length; i++){
+    linkovi[i].style.border = "3px solid green";
+}
