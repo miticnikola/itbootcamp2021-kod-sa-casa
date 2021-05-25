@@ -63,3 +63,85 @@ linkovi.forEach((link, i) => {
 
 // svim slikama sa extenzijom .png, postaviti okvir debljine 2px crvene boje
 
+//nacin 1
+slike.forEach(slika => {
+    if(slika.src.includes(".png") || slika.src.includes(".PNG")) {
+        slika.style.border = "2px solid red";
+    }
+});
+
+// nacin2
+let slikePng = document.querySelectorAll("img[src*='png']");
+slikePng.forEach(slika => {
+    slika.style.border = "2px solid green";
+});
+
+// Svakom linku na stranici promeniti target svojstvo na sl nacin:
+// ako je bilo blank, postaviti top, a ako nije imalo vrednosti ili je bilo razlicito od blank - postaviti _blank 
+let linkovi1 = document.querySelectorAll("a[target]");
+
+linkovi.forEach(link => {
+    if(link.hasAttribute('target') == true && "_blank"){
+        link.setAttribute('target', '_top');
+    } else if(link.hasAttribute('target') == false || link.hasAttribute('target') != "_blank"){
+        link.setAttribute('target', '_blank');
+    }
+});
+
+// nacin sa casa
+linkovi.forEach(link => {
+    if(link.target === "_blank"){
+        link.target = "_top";
+    } else {
+        link.target = "_blank";
+    }
+});
+
+/*
+Napraviti niz od najmanje tri imena. Proći nizom i imena ispisati:
+1. Svako u novom linku. Ako ime počinje na slovo „S“, link se otvara u novom tabu, a inače se otvara na istoj stranici.
+2. U listi kao stavke liste. Naizmenično stavke liste obojiti sa dve različite boje.
+3. U jednoj koloni tabele. Postaviti okvir, marginu i pading ćelijama tabele.
+*/
+
+let imena = ["pera", "mika", "laza", "Sonja", "persa", "zoki"];
+
+//1.
+imena.forEach(ime => {
+    if(ime.startsWith("S")){
+        document.body.innerHTML += `<a href="#" target="_blank">${ime} </a>`;
+    } else {
+        document.body.innerHTML += `<a href="#" target="">${ime} </a>`;
+    }
+});
+
+// nacin sa casa
+imena.forEach(ime => {
+    if(ime[0] == "S"){
+        document.body.innerHTML += `<a href="#" target="_blank">${ime} </a>`;
+    } else {
+        document.body.innerHTML += `<a href="#">${ime} </a>`;
+    }
+});
+
+// 2.
+let lista = `<ul>`;
+imena.forEach((ime, i) => {
+    if(i % 2 == 0){
+        lista += `<li style="color: red">${ime}</li>`;
+    } else {
+        lista += `<li style="color: green">${ime}</li>`;
+    }
+});
+lista += `</ul>`;
+document.body.innerHTML += lista;
+
+// 3.
+
+
+
+
+
+
+
+

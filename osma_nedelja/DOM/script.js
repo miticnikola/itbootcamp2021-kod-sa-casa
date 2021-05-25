@@ -147,3 +147,62 @@ let linkovi = document.getElementsByTagName("a");
 for(let i = 0; i < linkovi.length; i++){
     linkovi[i].style.border = "3px solid green";
 }
+
+
+
+
+// Nastavak predavanja
+//Dohvatanje roditeljskog cvora
+linkovi = document.querySelectorAll("a");
+
+linkovi.forEach(link => {
+    console.log(link.parentNode);
+    link.parentNode.style.border = "2px solid red";
+});
+
+
+// dohvatanje deteta nekog cvora
+let prviDiv = document.querySelector("div.container");
+prviDiv.childNodes.forEach(child => {
+    console.log(child);
+});
+
+let n = prviDiv.childNodes.length;
+for(let i = 0; i < n; i++){
+    console.log(prviDiv.childNodes[i]);
+}
+
+let link1 = prviDiv.childNodes[1];
+console.log(link1.previousSibling);
+console.log(link1.nextSibling);
+console.log(link1.nextSibling.nextSibling);
+
+link1.nextSibling.nextSibling.style.fontSize = "24px";
+
+
+// === Vezbanja slajd 15-16 ============
+
+// Svim parnim paragrafima na stranici dodati klasu error, a svim neparnim paragrafima dodati klasu success
+paragrafi = document.querySelectorAll("p");
+console.log(paragrafi);
+
+paragrafi.forEach((paragraf, i) => {
+    if(i % 2 == 0){
+        paragraf.classList.add("error");
+    } else {
+        paragraf.classList.add("success");
+    }
+});
+
+// Tekst u paragrafima naizmenično pisati veličinom 15px, veličinom 20px i veličinom od 25px.
+
+// Svim paragrafima čiji tekst sadrži reč error, postaviti klasu na error, svim paragrafima čiji tekst sadrži reč success, postaviti klasu na success. Ostale klase paragrafa ne modifikovati.
+//  if(p.textContent.includes(’success’))
+
+paragrafi.forEach(paragraf => {
+    // if(paragraf.includes("error")){
+    //     paragraf.
+    // }
+})
+
+// Svim paragrafima koji imaju klasu error skloniti tu klasu, a svim paragrafima koji nemaju klasu error dodati tu klasu.
