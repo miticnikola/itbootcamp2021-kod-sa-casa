@@ -78,6 +78,16 @@ let visiTimPodela = niz => {
     }
     // return drugiTim;
 
+    // Drugi nacin === ovo se pise, umesto if - else if petlje
+//     for(let i = 0; i < niz.length; i++){
+//         if(i < Math.ceil(niz.length/2)){
+//                prviTim.push(niz[i]);
+//          }
+//          else {
+//               drugiTim.push(niz[i]);
+//         }
+//    } 
+
     // Prosek visine prvi tim
     let sumaVisinaPrviTim = 0;
     prviTim.forEach(sportista => {
@@ -100,6 +110,8 @@ let visiTimPodela = niz => {
     } else {
         document.body.innerHTML += `<h1>Oba tima su u proseku iste visine.</h1>`
     }
+
+
 }
 
 visiTimPodela(sportisti);
