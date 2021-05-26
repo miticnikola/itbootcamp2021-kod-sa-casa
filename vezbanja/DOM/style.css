@@ -1,3 +1,12 @@
 img {
     width: 250px;
 }
+.error {
+    color: red;
+    border: solid 3px red;
+ }
+ .success {
+    color: green;
+    border: solid 3px green;
+ }
+ 

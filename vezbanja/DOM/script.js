@@ -73,3 +73,39 @@ linkovi.forEach(link => {
         link.target = "_blank";
     }
 });
+
+// Svim parnim paragrafima na stranici dodati klasu error, a svim neparnim paragrafima dodati klasu success
+paragrafi.forEach((paragraf, i) => {
+    if(i % 2 == 0){
+        paragraf.classList.add('error');
+    } else {
+        paragraf.classList.add('success');
+    }
+})
+
+// Tekst u paragrafima naizmenično pisati veličinom 15px, veličinom 20px i veličinom od 25px.
+paragrafi.forEach((paragraf, i) => {
+    if(i % 3 == 0){
+        paragraf.style.fontSize = "15px";
+    } else if(i % 3 == 1){
+        paragraf.style.fontSize = "20px";
+    } else if(i % 3 == 2){
+        paragraf.style.fontSize = "25px";
+    }
+});
+
+// Svim paragrafima čiji tekst sadrži reč error, postaviti klasu na error, svim paragrafima čiji tekst sadrži reč success, postaviti klasu na success. Ostale klase paragrafa ne modifikovati.
+//  if(p.textContent.includes(’success’))
+paragrafi.forEach(paragraf => {
+    if(paragraf.textContent.includes('success')){
+        paragraf.classList.add('success');
+    } else if(paragraf.textContent.includes('error')){
+        paragraf.classList.add('error');
+    }
+});
+
+
+// Svim paragrafima koji imaju klasu error skloniti tu klasu, a svim paragrafima koji nemaju klasu error dodati tu klasu.
+paragrafi.forEach(paragraf => {
+    paragraf.classList.toggle('error');
+});
