@@ -50,14 +50,15 @@ let dani = [dan, dan2, dan3, dan4, dan5];
 let najviseDatuma = niz => {
     let maxMer = niz[0].temperatura.length;
 
-    let dan;
+    let dan = niz[0].datum;   // da se ne bi pisalo od 59 do 61 linije koda, zadajemo odmah mogucu vrednost za dan
     for(let i = 0; i < niz.length; i++){
         if(niz[i].temperatura.length >= maxMer){
             // maxMer = niz[i].temperatura.length;
             dan = niz[i].datum;
-        } else if(maxMer == niz[0].temperatura.length){
-            dan = niz[0].datum;
-        }
+        } 
+        // else if(maxMer == niz[0].temperatura.length){ 
+        //     dan = niz[0].datum;
+        // }
     }
     console.log(dan);
 }
