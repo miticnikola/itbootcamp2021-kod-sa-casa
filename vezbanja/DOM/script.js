@@ -109,3 +109,23 @@ paragrafi.forEach(paragraf => {
 paragrafi.forEach(paragraf => {
     paragraf.classList.toggle('error');
 });
+
+
+let noviParagraf = document.createElement('p');
+noviParagraf.classList.add('klasa');
+noviParagraf.id = "aj_di";
+
+noviParagraf.textContent = "Text novog paragrafa"
+// noviParagraf.innerHTML = "Text novog paragrafa";
+
+prviErrorDiv.appendChild(noviParagraf); //ako se promeni kroz js preko innerHTML datom divu nece moci da se pristupi
+
+let noviLink = document.createElement('a');
+noviLink.textContent = "Klikni me";
+noviLink.href = "http://www.google.com";
+
+noviParagraf.appendChild(noviLink);
+
+noviParagraf.removeChild(noviLink);
+
+//noviDiv.innerHTML += `<p class="klasa" id="aj-di">Text novog paragrafa</p>`
