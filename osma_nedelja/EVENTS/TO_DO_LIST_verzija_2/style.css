@@ -5,7 +5,7 @@
 }
 
 section {
-    width: 30%;
+    width: 300px;
     margin: 30px;
     padding: 10px;
 
@@ -34,13 +34,13 @@ ul li {
     text-decoration: line-through;
 }
 
-button, input {
+button, #unosObaveze {
     display: block;
     width: 100%;
     margin: 0 auto;
 }
 
-input {
+#unosObaveze {
     padding: 5px 3px;
     font-size: 1em;
     margin: 25px 0px 15px 0px;
