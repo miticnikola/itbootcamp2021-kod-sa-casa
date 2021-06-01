@@ -40,25 +40,82 @@ klik(); // ispisuje window
 
 
 /////////////================================================================////////////
-let b1 = document.getElementById('b1');
-let b2 = document.getElementById('b2');
-let divIspis = document.getElementById('ispis');
-let clock = null;
+// let b1 = document.getElementById('b1');
+// let b2 = document.getElementById('b2');
+// let divIspis = document.getElementById('ispis');
+// let clock = null;
 
-b1.addEventListener('click', () => {
-    if(clock === null){
-        clock = setTimeout(() => {
+// b1.addEventListener('click', () => {
+//     if(clock === null){
+//         clock = setTimeout(() => {
+//             let datum = new Date();
+//             let sati = datum.getHours();
+//             let minuti = datum.getMinutes();
+//             let sekundi = datum.getSeconds();
+//             // let milisek = datum.getMilliseconds();
+//             divIspis.innerHTML += `${sati}:${minuti}:${sekundi}`;
+//             clock = null;
+//         }, 1000);
+//     }
+// });
+
+// b2.addEventListener('click', () => {
+//     clearTimeout(clock);
+//     clock = null;
+// });
+
+
+// // SetInterval
+
+// let clockInterval = null;
+
+// console.log("Prva linija koda");
+// console.log("Druga linija koda");
+
+
+// clockInterval = setInterval(() => {
+//     console.log("Poziv callback funkcije");
+// }, 1000); // kada se funkcija upisuje kao parametar to je callBack funkcija
+
+
+// console.log("Cetvrta linija koda");
+// console.log("Peta linija koda");
+
+
+// setTimeout(() => {
+//     clearInterval(clockInterval);
+// }, 5000);
+
+// console.log("Sedma linija koda");
+// console.log("Osma linija koda");
+
+
+// Set Interval
+let b3 = document.getElementById('b3')
+let b4 = document.getElementById('b4')
+let divIspis2 = document.getElementById('ispis2');
+
+let clockPeriod = null;
+
+/*
+0   0.5   1    1.5    2    2.5    3    3.5    4      ....
+c1        c1         c2           c3          c4  
+ */
+
+b3.addEventListener('click', () => {
+    if(clockPeriod === null){
+        clockPeriod = setInterval(() => {
             let datum = new Date();
-            let sati = datum.getHours();
+            let sati = datum.getUTCHours();
             let minuti = datum.getMinutes();
-            let sekundi = datum.getSeconds();
-            // let milisek = datum.getMilliseconds();
-            divIspis.innerHTML += `${sati}:${minuti}:${sekundi}`;
-        }, 1000);
+            let sekunde = datum.getSeconds();
+
+            divIspis2.innerHTML = `${sati}: ${minuti}: ${sekunde}`;
+        }, 1000 / 5) // 5 puta u sekundi otkucava clockPeriod
     }
 });
 
-b2.addEventListener('click', () => {
-    clearTimeout(clock);
-    clock = null;
+b4.addEventListener('click', () => {
+    clearInterval(clockPeriod);
+    clockPeriod = null;
 });
