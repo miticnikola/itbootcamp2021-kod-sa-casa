@@ -202,5 +202,5 @@ fruitsVeg()
     document.body.appendChild(h4);
 })
 .catch(err => {
-    console.log(error);
+    console.log(err);
 });
