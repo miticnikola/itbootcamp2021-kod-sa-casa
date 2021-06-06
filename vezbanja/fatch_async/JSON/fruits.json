@@ -1,26 +1,35 @@
 [
     {
         "name": "fruit1",
-        "number": "5"
+        "number": "5",
+        "weight": 5
     },
     {
         "name": "cranberries",
-        "number": "7"
+        "number": "7",
+        "weight": 5
     },
     {
         "name": "fruit1",
-        "number": "5"
+        "number": "5",
+        "weight": 7
+
     },
     {
         "name": "fruit2",
-        "number": "7"
+        "number": "7",
+        "weight": 12
+
     },
     {
         "name": "strawberries",
-        "number": "5"
+        "number": "5",
+        "weight": 9
+
     },
     {
         "name": "berries",
-        "number": "7"
+        "number": "7",
+        "weight": 9
     }
 ]

@@ -102,9 +102,9 @@ fruits1()
     let header3 = document.createElement('h3');
     header3.textContent = "Fruits";
     body.appendChild(header3);
-
+    
     let ulFruits = `<ul>`;
-
+    
     data.forEach(fruit => {
         ulFruits += `<li>${fruit.name}</li>`;
     })
@@ -112,6 +112,14 @@ fruits1()
     
     body.innerHTML += ulFruits; 
     // appendChild() ne moze unutar promisa da se koristi?
+    
+
+    let zbirTezina = 0;
+    data.forEach(fruit => {
+        zbirTezina += fruit.weight;
+    });
+    body.innerHTML += `Tezina svog voca iznosi ${zbirTezina}kg`;
+    return zbirTezina;
 })
 .catch(err => {
     console.log(err);
@@ -144,12 +152,55 @@ vegetables1()
     })
     ulVeg += '</ul>';
     body.innerHTML += ulVeg;
+
+    let zbirTezina = 0;
+    data.forEach(vegetable => {
+        zbirTezina += vegetable.weight;
+    });
+    body.innerHTML += `Zbir tezina svog povrca iznosi ${zbirTezina}kg`;
+    return zbirTezina;
+
 })
 .catch(err => {
     console.log(err);
 });
 
 
-
-
 // 5. Nadovezati se na prethodni zadatak i nakon ispisane liste voća u paragrafu ispisati ukupnu težina svog voća u kilogramima. Zatim, ispod liste povrća u paragrafu ispisati ukupnu težinu povrća u kilogramima. Postaviti da asinhrona funkcija vraća zbir količina voća i povrća u kilogramima. Pri pozivu asinhrone funkcije, ispisati  ovu vrednost.
+let fruitsVeg = async() => {
+    let fruits = await fetch("../JSON/fruits.json");
+    let sum = 0;
+
+    if(fruits.status != 200){
+        throw new Error("Ne mogu da preuzmem podatke");
+    } else {
+        let data = await fruits.json();
+
+        data.forEach(fruit => {
+            sum += fruit.weight;
+        });
+    }
+
+    let vegetables = await fetch("../JSON/vegetables.json");
+
+    if(vegetables.status != 200){
+        throw new Error("Ne mogu da dohvatim podatke");
+    } else {
+        let dataV = await vegetables.json();
+        
+        dataV.forEach(vegetable => {
+            sum += vegetable.weight;
+        });
+    }
+    return sum;
+}
+
+fruitsVeg()
+.then(sum => {
+    let h4 = document.createElement('h4');
+    h4.textContent = `Ukupna tezina voca i povrca je ${sum}kg`;
+    document.body.appendChild(h4);
+})
+.catch(err => {
+    console.log(error);
+});

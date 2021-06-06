@@ -1,10 +1,22 @@
 [
     {
         "name": "vegetables1",
-        "number": "5"
+        "number": "5",
+        "weight": 11
     },
     {
         "name": "vegetables2",
-        "number": "7"
+        "number": "7",
+        "weight": 7
+    },
+    {
+        "name": "Carrot",
+        "number": "5",
+        "weight": 9
+    },
+    {
+        "name": "Green",
+        "number": "7",
+        "weight": 15
     }
 ]
