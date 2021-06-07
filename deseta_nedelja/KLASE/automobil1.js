@@ -50,7 +50,8 @@ let auto1 = new Auto('red', 'Fiat', true);
 
 
 // OVAKO DA -- pristup poljima iskljucivo preko Getera i Setera
+
 console.log(auto1.boja); //pristupamo geteru ali bez zagrada
 
-auto1.boja = "white"; //pristupam geteru za boju, opet bez zagrada
+auto1.boja = "white"; //pristupam seteru za boju, opet bez zagrada
 console.log(auto1.boja);
