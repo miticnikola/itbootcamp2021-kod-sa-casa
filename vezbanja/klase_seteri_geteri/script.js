@@ -83,7 +83,7 @@ class Film {
     }
 }
 
-let film1 = new Film("Celavi se cupaju", "Mika Antic", 1801);
+let film1 = new Film("Pera detlic", "Mika Antic", 1801);
 let film2 = new Film("Ljubavni zivot Budimira Trajkovica", "Mira FUrlan", 1970);
 let film3 = new Film("Putopisi iz Narnije", "Neki tamo indijac", 2012);
 
@@ -170,3 +170,5 @@ console.log(pacijent3.kritican());
 console.log(pacijent3._ime);
 console.log(pacijent3._visina);
 console.log(pacijent3._tezina);
+
+// console.log(pacijent2._ime);
