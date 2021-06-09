@@ -54,4 +54,6 @@ pacijenti.forEach(pacijent => {
     if(pacijent.ime.includes('a') || pacijent.ime.includes('A')){
         console.log(pacijent.ime);
     }
-})
+});
+
+// Napraviti funkciju srednjaVisina kojoj se prosleđuje niz pacijanata a koja određuje i vraća srednju visinu pacijenata.
