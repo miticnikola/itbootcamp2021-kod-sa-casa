@@ -51,7 +51,6 @@ class FMRadio {
         let prikaz = document.getElementById('prikaz');
 
         document.addEventListener('keydown', e => {
-            // e.preventDefault();
             if(e.keyCode == 187 || e.keyCode == 107){
                 this.jacinaTona++;
                 if(this.jacinaTona > 20){
