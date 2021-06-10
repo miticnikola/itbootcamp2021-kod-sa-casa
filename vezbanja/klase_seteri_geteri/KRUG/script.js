@@ -35,7 +35,7 @@ let upisaniKrug = (k1, k2) => {
     }
 }
 
-let krug1 = new Krug(2);
+let krug1 = new Krug(3);
 let krug2 = new Krug(4);
 let krug3 = new Krug(6);
 let krug4 = new Krug(8);
@@ -49,12 +49,17 @@ let krugovi = [krug1, krug2, krug3, krug4];
 
 let rastuci = niz => {
     for(let i = 0; i < niz.length; i++){
-        for(let j = 0; j < niz.length; j+2){
-            if(niz[i].povrsinaKruga() < niz[j].povrsinaKruga()){
-                return true;
-            } else {
-                return false;
-            }
+        // for(let j = 0; j < niz.length; j+2){
+        //     if(niz[i].povrsinaKruga() < niz[j].povrsinaKruga()){
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+        if(niz[i].povrsinaKruga() < niz[i + 1].povrsinaKruga()){
+            return true;
+        } else {
+            return false;
         }
     }
 }
