@@ -56,7 +56,6 @@ console.log(cipela1, cipela2, cipela3);
 
 
 let popravka = c => {
-
     c.nizPrepravki.forEach(prepravka => {
         if(prepravka == "zalepi"){
             c.zalepi();
