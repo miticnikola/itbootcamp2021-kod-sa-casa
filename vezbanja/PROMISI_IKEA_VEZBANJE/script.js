@@ -177,31 +177,16 @@ let click2 = e => {
                 document.body.appendChild(table);
 
                 let td = table.querySelectorAll('td');
-                console.log(td);
 
                 td.forEach(t => {
-                    t.setAttribute("style", "border: 1px solid green; padding: 5px;");
-
+                    t.setAttribute("style", "border: 1px solid green; padding: 5px; text-transform: uppercase;");
+                    
                 });
-
-                // let pMessage = document.createElement('p');
-                // pMessage.setAttribute('style', 'font-weight: bold; font-size: 24px;');
-                // pMessage.textContent = `Total order price: ${totalPrice} RSD`;
-                // divOrder.appendChild(pMessage);
             }
         })
         .catch(err => {
             console.log(err);
         });
-    //         getItems('JSON/weights.json');
-    //     )
-    //     .then(
-    //         getItems('JSON/prices.json');
-    //         // Ispisem ukupnu cenu svih artikala koji nisu na stanju
-    //     )
-    //     .then(
-    //         // Funkcija klik 1 je tacna ali neprakticna (callback hell);
-    // )
 }
 
 formOrder.addEventListener('submit', click2);
