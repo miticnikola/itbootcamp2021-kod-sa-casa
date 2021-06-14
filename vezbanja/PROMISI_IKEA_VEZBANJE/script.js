@@ -144,26 +144,26 @@ let click2 = e => {
                 table.setAttribute('style', 'border-collapse: collapse;');
 
                 data.forEach(item => {
-                    
-                    if(itemsNoStock.includes(item.id)){
+
+                    if (itemsNoStock.includes(item.id)) {
                         let row = document.createElement('tr');
                         let td1 = document.createElement('td');
                         td1.textContent = item.item;
-                        
+
                         row.appendChild(td1);
                         table.appendChild(row);
-                        
-                        
+
+
                         let td2 = document.createElement('td');
-                        td2.textContent = item.price;                       
-                        row.appendChild(td2);          
+                        td2.textContent = item.price;
+                        row.appendChild(td2);
                     }
-                                    
+
                 });
                 let row1 = document.createElement('tr');
                 let td3 = document.createElement('td');
                 let td4 = document.createElement('td');
- 
+
                 td3.textContent = "UKUPNO"
                 td4.textContent = totalPrice;
 
@@ -171,16 +171,13 @@ let click2 = e => {
                 row1.appendChild(td4);
                 table.appendChild(row1);
 
-
-                console.log(table);
-
                 document.body.appendChild(table);
 
                 let td = table.querySelectorAll('td');
 
                 td.forEach(t => {
                     t.setAttribute("style", "border: 1px solid green; padding: 5px; text-transform: uppercase;");
-                    
+
                 });
             }
         })
@@ -189,5 +186,102 @@ let click2 = e => {
         });
 }
 
-formOrder.addEventListener('submit', click2);
+// formOrder.addEventListener('submit', click2);
+
+async function clickGetItems(){
+    // Ovde radimo nesto sa podacimo iz stock.json
+    let data1 = await getItemsReturnPromise('JSON/stock.json');
+    let capacity = inputOrder.value;
+    let itemsNoStock = [];
+    data1.forEach(item => {
+        if (item.stock == 0) {
+            itemsNoStock.push(item.id);
+        }
+    });
+    // Ovde radimo nesto sa podacimo iz weights.json
+    let data2 = await getItemsReturnPromise('JSON/weights.json');
+    let totalWeight = 0;
+    data2.forEach(item => {
+        if (itemsNoStock.includes(item.id)) {
+            // Potrebna je tezina artikla
+            totalWeight += item.weight;
+        }
+    });
+    // console.log(totalWeight);
+    // let pMessage = document.createElement('p');
+    table = document.createElement('table');
+    if (totalWeight > capacity) {
+        let tdError = document.createElement('td');
+        tdError.setAttribute('style', 'font-weight: bold; font-size: 24px;');
+        tdError.textContent = "Not enough capacity in truck!";
+
+        table.appendChild(tdError);
+
+    }
+    else {
+        // Ovde radimo nesto sa podacimo iz prices.json
+        let data3 = await getItemsReturnPromise('JSON/prices.json');
+        let totalPrice = 0;
+                data3.forEach(item => {
+                    if (itemsNoStock.includes(item.id)) {
+                        totalPrice += item.price;
+                        console.log(item.price);
+                    }
+                });
+
+                // table = document.createElement('table');
+                table.setAttribute('style', 'border-collapse: collapse;');
+
+                data3.forEach(item => {
+
+                    if (itemsNoStock.includes(item.id)) {
+                        let row = document.createElement('tr');
+                        let td1 = document.createElement('td');
+                        td1.textContent = item.item;
+
+                        row.appendChild(td1);
+                        table.appendChild(row);
+
+
+                        let td2 = document.createElement('td');
+                        td2.textContent = item.price;
+                        row.appendChild(td2);
+                    }
+
+                });
+                let row1 = document.createElement('tr');
+                let td3 = document.createElement('td');
+                let td4 = document.createElement('td');
+
+                td3.textContent = "UKUPNO"
+                td4.textContent = totalPrice;
+
+                row1.appendChild(td3);
+                row1.appendChild(td4);
+                table.appendChild(row1);
+
+                // divOrder.appendChild(table);
+
+                let td = table.querySelectorAll('td');
+
+                td.forEach(t => {
+                    t.setAttribute("style", "border: 1px solid green; padding: 5px; text-transform: uppercase;");
+
+                });
+    }
+    return table;
+}
+
+let click3 = event => {
+    event.preventDefault();
+    clickGetItems()
+    .then(para => {
+        divOrder.appendChild(table);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
+
+formOrder.addEventListener('submit', click3);
 
