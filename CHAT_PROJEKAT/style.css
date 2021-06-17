@@ -1,0 +1,43 @@
+/* <!-- #008e99 --> */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Header */
+header {
+    color: #008e99;
+    text-shadow: 0px 1px 10px gray;
+}
+/* Tasks */
+#tasks {
+    padding: 20px 0px;
+}
+.btn {
+    width: 20%;
+    background-color: #268d94;
+    padding: 5px;
+    border: none;
+    color: white;
+    text-shadow: 0px 1px 10px gray;
+    border-radius: 5px;
+
+}
+/* Message */
+#messages {
+background-color: teal;
+}
+
+form {
+ padding: 5px 0px;
+}
+
+#message, #userName {
+    padding: 3px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 1px 10px gray;
+}

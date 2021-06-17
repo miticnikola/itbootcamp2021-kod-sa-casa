@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Body -->
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Chatroom</h1>
+        <h4>Choose a chatroom</h4>
+    </header>
+    <!-- Tasks -->
+    <section id="tasks">
+        <button id="general" class="btn">#general</button>
+        <button id="js" class="btn">#js</button>
+        <button id="homeworks" class="btn">#homeworks</button>
+        <button id="tests" class="btn">#tests</button>
+    </section>
+
+    <!-- Messsage section -->
+    <section id="messages">
+        <ul>
+
+        </ul>
+    </section>
+
+    <!-- Message and username -->
+    <section id="msgUserName">
+        <!-- Message -->
+        <form action="" id="msg">
+            <input type="text" name="message" id="message" placeholder="Your message">
+            <input type="submit" value="Send" class="btn">
+        </form>
+
+        <!-- Username -->
+        <form action="" id="user">
+            <input type="text" name="userName" id="userName" placeholder="Your username">
+            <input type="submit" value="Update" class="btn">
+        </form>
+
+    </section>
+
+    <!-- Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="js/firebase.js"></script>
+    <!-- JS file -->
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
