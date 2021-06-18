@@ -1,9 +1,9 @@
-
-class Chatroom {
+export default class Chatroom {
     constructor(room, username){
         this.room = room;
         this.username = username;
         this.chats = db.collection('chats');
+        this.unsub;
     }
     // Setters
     set room(room){
@@ -36,58 +36,32 @@ class Chatroom {
     }
 
     getChats(callBack){
-        this.chats.onSnapshot(snapshot => {
+        this.unsub = this.chats
+        .where('room', '==', this.room)
+        .orderBy('created_at', 'asc') //moze i bez asc
+        .onSnapshot(snapshot => {
             // console.log(snapshot.docChanges());
             snapshot.docChanges().forEach(change => {
                 if(change.type == "added"){
                     // console.log("Promena u bazi");
+                    // console.log(callBack(change.doc.data());
                     callBack(change.doc.data()); //vrsi ispis dokumenata koji su dodati u bazu
                 }
             });
         });
     }
+
+    updateUsername(newUserName){
+        // let inputUsername = document.getElementById('userName');
+        // newUserName = inputUsername.value;
+        this.username = newUserName;
+    }
+
+    updateRoom(newRoom){
+        this.room = newRoom;
+        if(this.unsub){
+            this.unsub();
+        }
+    }
+
 }
-
-let chatroom1 = new Chatroom('js', 'Stefan');
-
-// Provera getera i setera
-//geter
-console.log(chatroom1.username);
-// Seter
-chatroom1.username = "Izvorinka Milosevic"
-console.log(chatroom1.username);
-
-// seter
-console.log(chatroom1.room);
-// geter
-chatroom1.room = 'general';
-console.log(chatroom1.room);
-
-console.log(chatroom1);
-
-
-// Ovde se radi slanje promisa
-
-
-// chatroom1.addChat("Ovo je poruka")
-// .then(() => {
-//     console.log('Uspesno ste prosledili novu poruku');
-// })
-// .catch(err => {
-//     console.log(`Doslo je do greske ${err}`);
-// });
-
-// let chatroom2 = new Chatroom("general", 'Jelena');
-// chatroom2.addChat("Zdravo svima")
-// .then(() => {
-//     console.log("Uspesno ste prosledili poruku");
-// })
-// .catch(err => {
-//     console.log(err);
-// });
-
-
-// POZIV CALLBACK FUNKCIJE getChats();
-chatroom1.getChats(data => {
-    console.log(data);
-});
