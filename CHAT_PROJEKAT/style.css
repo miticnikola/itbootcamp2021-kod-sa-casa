@@ -18,7 +18,7 @@ header {
 .btn {
     width: 20%;
     background-color: #268d94;
-    padding: 5px;
+    padding: 12px;
     border: none;
     color: white;
     text-shadow: 0px 1px 10px gray;
@@ -28,6 +28,33 @@ header {
 /* Message */
 #messages {
 background-color: teal;
+overflow: hidden;
+margin-bottom: 50px;
+padding: 50px 0;
+}
+
+#messages li {
+    margin: 10px;
+    background-color: white;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px 5px 5px 0;
+    width: 50.1%;
+}
+
+#messages li .username, #messages li .message {
+    font-weight: bold;
+}
+#messages li .date {
+    color: gray;
+}
+
+#messages li:nth-child(odd) {
+    background-color: aquamarine;
+    float: left;
+}
+#messages li:nth-child(even) {
+    float: right;
 }
 
 form {
@@ -35,9 +62,10 @@ form {
 }
 
 #message, #userName {
-    padding: 3px;
+    padding: 10px;
     width: 50%;
     border-radius: 5px;
     border: none;
     box-shadow: 0px 1px 10px gray;
+    
 }

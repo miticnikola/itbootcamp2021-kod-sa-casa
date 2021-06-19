@@ -15,9 +15,25 @@ export default class ChatUI{
         let d = date.getDate();
         let m = date.getMonth() + 1;
         let g = date.getFullYear();
-        // treba dodati i vreme slanja poruke, i plus dodati da svaki broj bude dvocifren, tj da kad je jednocifren broj, da pise npr 09, a ne 9
 
-        return `${d}.${m}.${g}`;
+        // Hours and Minutes
+        let h = date.getHours();
+        let min = date.getMinutes();
+
+        if(d < 10){
+            d = `0` + d;
+        }
+        if(m < 10){
+            m = `0` + m;
+        }
+        if(h < 10){
+            h = `0` + h;
+        }
+        if(min < 10){
+            min = `0` + min;
+        }
+
+        return `${d}.${m}.${g} - ${h}:${min}`
     }
     templateLI(data){
         let date = data.created_at.toDate();
