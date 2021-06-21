@@ -39,7 +39,7 @@ export default class ChatUI{
         let date = data.created_at.toDate();
 
         let li = `
-        <li style="border: 1px solid black">
+        <li>
         <span class="name">${data.username} : </span> <span class="msg">${data.message}</span> <br>
         <span class="date">${this.formatDate(date)}</span>
         </li>

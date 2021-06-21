@@ -30,17 +30,7 @@ export default class Chatroom {
             created_at: firebase.firestore.Timestamp.fromDate(d)
         }
 
-
-    //     if(msg != /\s/){
-    //         alert("Prazna poruka")
-    //     } else {
-    //         let request = db.collection('chats').add(chat);
-    //         return request;
-    //     }
-    // }
-
         let response = await this.chats.add(chat); //add automatski deklarise id, dok set ne deklarise automatski
-
         return response;
     }
 

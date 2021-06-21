@@ -82,11 +82,20 @@ let msgInput = document.querySelector('#message');
 
 msgSubmit.addEventListener('click', e => {
     e.preventDefault();
-    chatroom2.addChat(msgInput.value);
-    // .then(() => {
-    //     msgInput.value = '';
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    // });
+    
+    let odseceniRazmaci = msgInput.value.trim();
+
+    if(odseceniRazmaci.length == 0){
+        alert('Ovo nije unesenaa poruka');
+        msgInput.value = '';
+    } else {
+        chatroom2.addChat(msgInput.value)
+        .then(() => {
+            msgInput.value = '';
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
 });
