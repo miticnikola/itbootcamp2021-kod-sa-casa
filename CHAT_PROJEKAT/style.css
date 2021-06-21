@@ -15,7 +15,7 @@ header {
 #tasks {
     padding: 20px 0px;
 }
-.btn {
+.btn, .btn1 {
     width: 20%;
     background-color: #268d94;
     padding: 12px;
@@ -23,14 +23,25 @@ header {
     color: white;
     text-shadow: 0px 1px 10px gray;
     border-radius: 5px;
-
 }
+
+.btn:hover {
+    background-color: tomato;
+}
+
+.active {
+    background-color: tomato;
+}
+
 /* Message */
 #messages {
 background-color: teal;
-overflow: hidden;
-margin-bottom: 50px;
-padding: 50px 0;
+overflow: auto; /* da bi prikazivalo na kraju zadnju poruku*/
+height: 500px;
+/* margin-bottom: 50px; */
+padding: 50px 0px;
+/* padding: 50px 500px; */
+/* menjati po rezolucijama razmake */
 }
 
 #messages li {
@@ -49,13 +60,13 @@ padding: 50px 0;
     color: gray;
 }
 
-#messages li:nth-child(odd) {
+/* #messages li:nth-child(odd) {
     background-color: aquamarine;
     float: left;
 }
 #messages li:nth-child(even) {
     float: right;
-}
+} */
 
 form {
  padding: 5px 0px;
@@ -67,5 +78,47 @@ form {
     border-radius: 5px;
     border: none;
     box-shadow: 0px 1px 10px gray;
-    
 }
+
+/* #user {
+    position: relative;
+} */
+.notification {
+    border: 1px solid #268d94;
+    background-color: rgba(38, 141, 148, 0.5);
+    padding: 10px;
+    position: absolute;
+    font-weight: bold;
+    bottom: 110px;
+    right: 50px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.notification .userNot {
+    color: #3d3d3d;
+    /* text-shadow: 1px 1px 1px black; */
+}
+
+
+/* Scrollbar  dodati #message za scrollbar samo u message sekciji  */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }

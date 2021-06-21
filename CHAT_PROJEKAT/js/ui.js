@@ -12,6 +12,13 @@ export default class ChatUI{
         return this._ul;
     }
     formatDate(date){
+        // Date Today 
+        let today = new Date();
+        let td = today.getDate();
+        let tm = today.getMonth() + 1;
+        let ty = today.getFullYear();
+
+        // Date from firebase
         let d = date.getDate();
         let m = date.getMonth() + 1;
         let g = date.getFullYear();
@@ -19,6 +26,8 @@ export default class ChatUI{
         // Hours and Minutes
         let h = date.getHours();
         let min = date.getMinutes();
+
+        // padStart() -- za dvocifrene formate
 
         if(d < 10){
             d = `0` + d;
@@ -33,7 +42,12 @@ export default class ChatUI{
             min = `0` + min;
         }
 
-        return `${d}.${m}.${g} - ${h}:${min}`
+        if(td == d && tm == m && ty == g){
+            return `${h}:${min}`;
+        } else {
+            return `${d}.${m}.${g} - ${h}:${min}`
+        }
+
     }
     templateLI(data){
         let date = data.created_at.toDate();
@@ -45,7 +59,16 @@ export default class ChatUI{
         </li>
         `;
 
-        // li.setAttribute('style', 'border: 1px solid black');
         this.ul.innerHTML += li;
+        this.ul.scrollTop = this.ul.scrollHeight; //da prikazuje poslednje poruke
+
+        if(data.username == localStorage.username){
+            this.ul.style.textAlign = "left";
+        } else {
+            this.ul.style.textAlign = "right";
+        }
+    }
+    clear(){
+        this.ul.innerHTML = " ";
     }
 }

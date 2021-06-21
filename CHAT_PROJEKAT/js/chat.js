@@ -51,16 +51,21 @@ export default class Chatroom {
     }
 
     updateUsername(newUserName){
-        // let inputUsername = document.getElementById('userName');
-        // newUserName = inputUsername.value;
         this.username = newUserName;
+        // Postavljanje vrednosti u localStorage
+        localStorage.setItem("username", newUserName); //ili this.username jer u prethodnoj liniji this.username dobija vrednost newUserName
     }
 
     updateRoom(newRoom){
         this.room = newRoom;
+        // localStorage.setItem("room", newRoom);
+
         if(this.unsub){
             this.unsub();
+
+            // Postavljanje vrednosti za sobu u localStorage
         }
+
     }
 
 }
