@@ -10,6 +10,7 @@
 header {
     color: #008e99;
     text-shadow: 0px 1px 10px gray;
+    padding-top: 15px;
 }
 /* Tasks */
 #tasks {
@@ -26,47 +27,43 @@ header {
 }
 
 .btn:hover {
-    background-color: tomato;
+    background-color: gray;
 }
 
 .active {
-    background-color: tomato;
+    background-color: gray;
 }
 
 /* Message */
 #messages {
-background-color: teal;
-overflow: auto; /* da bi prikazivalo na kraju zadnju poruku*/
-height: 500px;
-/* margin-bottom: 50px; */
-padding: 50px 0px;
-/* padding: 50px 500px; */
-/* menjati po rezolucijama razmake */
+overflow: auto;
+height: 70vh;
+padding: 20px 400px;
+box-shadow: 1px 1px 5px gray;
+margin-bottom: 30px;
 }
 
+#messages ul {
+    overflow: hidden;
+}
 #messages li {
     margin: 10px;
-    background-color: white;
+    /* background-color: white; */
     list-style: none;
-    padding: 10px 0;
-    border-radius: 5px 5px 5px 0;
-    width: 50.1%;
+    padding: 10px 20px;
+    /* border-radius: 5px 5px 5px 0; */
+    width: 50%;
+    /* box-shadow: 0px 0px 5px gray; */
+    text-align: left;
 }
 
-#messages li .username, #messages li .message {
+#messages li .name, #messages li .msg {
     font-weight: bold;
+    color: #268d94;
 }
 #messages li .date {
     color: gray;
 }
-
-/* #messages li:nth-child(odd) {
-    background-color: aquamarine;
-    float: left;
-}
-#messages li:nth-child(even) {
-    float: right;
-} */
 
 form {
  padding: 5px 0px;
@@ -114,11 +111,114 @@ form {
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: red; 
+    background: #3d3d3d; 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
+    background: #3d3d3d; 
   }
+
+  /* Media queries */
+  @media only screen and (max-width: 1500px) {
+      #messages {
+          padding: 20px 300px;
+      }
+      #msgUserName {
+        padding-top: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 1210px) {
+    #messages {
+        padding: 20px 200px;
+    }
+
+}
+
+  @media only screen and (max-width: 940px) {
+    #messages {
+        padding: 20px 100px;
+    }
+    #msgUserName {
+        padding-top: 30px;
+    }
+    .notification {
+        bottom: 35px;
+        right: 120px;
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #msgUserName {
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
+    .notification {
+        bottom: 0px;
+        right: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+
+  @media only screen and (max-width: 640px) {
+    body {
+        position: relative;
+    }
+    #messages {
+        padding: 20px 50px;
+    }
+    #messages li {
+        width: 60%;
+        font-size: 0.8rem;
+    }
+    #message, #userName {
+        width: 70%;
+    }
+    #msgUserName {
+        padding: 0;
+        padding-bottom: 30px;
+    }
+    .notification {
+        padding: 5px;
+        bottom: 5px;
+        right: 20px;
+        font-size: 0.9rem;
+    }
+}
+
+  @media only screen and (max-width: 500px) {
+    #tasks {
+        display: flex;
+        flex-direction: column;
+    }
+    #tasks .btn {
+        width: 97%;
+        margin: 0 auto;
+        margin-bottom: 5px;
+
+    }
+    #messages {
+        padding: 5px 5px;
+    }
+    #messages li {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    #messages li {
+        font-size: 0.70rem;
+    }
+    #msgUserName input {
+        font-size: 0.7rem;
+    }
+    #msgUserName .btn1 {
+        padding: 10px 0px;
+    }
+
+
+}

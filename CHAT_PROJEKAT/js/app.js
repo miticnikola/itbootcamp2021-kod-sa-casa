@@ -14,7 +14,7 @@ let btnsRooms = document.querySelectorAll('.btn')
 
 // Citamo iz lokalne memorije username ukoliko postoji, u suprotnom default username je anonymus
 let username = () => {
-    if(localStorage.username){
+    if (localStorage.username) {
         return localStorage.username;
     } else {
         return "anonymus";
@@ -23,7 +23,7 @@ let username = () => {
 
 // Citamo iz lokalne memorije room ukoliko postoji, u suprotnom default room je general
 let room = () => {
-    if(localStorage.room){
+    if (localStorage.room) {
         return localStorage.room;
     } else {
         return "general";
@@ -32,8 +32,8 @@ let room = () => {
 
 
 // Active buttons
-for(let i = 0; i < btnsRooms.length; i++){
-    if(btnsRooms[i].id == room()){
+for (let i = 0; i < btnsRooms.length; i++) {
+    if (btnsRooms[i].id == room()) {
         btnsRooms[i].classList.add('active');
     }
 }
@@ -51,28 +51,28 @@ chatroom2.getChats(data => {
 
 
 // Message sending    
-    msgSubmit.addEventListener('click', e => {
-        e.preventDefault();  
+msgSubmit.addEventListener('click', e => {
+    e.preventDefault();
 
-        msgInput.value = msgInput.value.replace('\t', ' ');
+    msgInput.value = msgInput.value.replace('\t', ' ');
 
-        let odseceniRazmaci = msgInput.value.trim();
-        
-        if(odseceniRazmaci.length == 0){
-            alert('Unesite tekst poruke.');
-            msgInput.value = '';
-        } else {
-            chatroom2.addChat(msgInput.value)
+    let odseceniRazmaci = msgInput.value.trim();
+
+    if (odseceniRazmaci.length == 0) {
+        alert('Unesite tekst poruke.');
+        msgInput.value = '';
+    } else {
+        chatroom2.addChat(msgInput.value)
             .then(() => {
                 msgInput.value = '';
             })
             .catch(err => {
                 console.log(err);
             });
-        }
-        
-    });
-    
+    }
+
+});
+
 // Update username
 userForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -81,69 +81,30 @@ userForm.addEventListener('submit', e => {
     username = username.replace('\t', ' ');
     let empty = username.trim();
 
-    if(username.length < 2 || username.length > 10 || empty.length == 0){
+    if (username.length < 2 || username.length > 10 || empty.length == 0) {
         alert('Username must have between 2 and 10 caracters, and can\'t be empty field');
         userForm.reset();
     } else {
         let p = document.createElement('p');
         p.classList.add('notification');
         p.innerHTML = `<span class="userNot">Username:</span> ${userInput.value}`;
-        
+
+
         userForm.appendChild(p);
         setTimeout(() => {
+            location.reload();
             userForm.removeChild(p);
         }, 3000);
-        
+
         chatroom2.updateUsername(userInput.value);
-        userForm.reset();   
+        userForm.reset();
     }
 });
 
-// // Changing rooms
-// let general = document.getElementById('general');
-// let js = document.getElementById('js');
-// let homeworks = document.getElementById('homeworks');
-// let tests = document.getElementById('tests');
 
-// general.addEventListener('click', () => {
-//     ulChatList.innerHTML = ' ';
-
-//     chatroom2.updateRoom('general');
-//     chatroom2.getChats(data => {
-//         chatUI1.templateLI(data);
-//     });
-// });
-
-// js.addEventListener('click', () => {
-//     ulChatList.innerHTML = ' ';
-
-//     chatroom2.updateRoom('js');
-//     chatroom2.getChats(data => {
-//         chatUI1.templateLI(data);
-//     });
-
-// });
-// homeworks.addEventListener('click', () => {
-//     ulChatList.innerHTML = ' ';
-
-//     chatroom2.updateRoom('homeworks');
-//     chatroom2.getChats(data => {
-//         chatUI1.templateLI(data);
-//     });
-
-// });
-// tests.addEventListener('click', () => {
-//     ulChatList.innerHTML = ' ';
-
-//     chatroom2.updateRoom('tests');
-//     chatroom2.getChats(data => {
-//         chatUI1.templateLI(data);
-//     });
-
-// });
-
+// Menjanje soba
 navRooms.addEventListener('click', e => {
-    if(e.target.tagName == "BUTTON"){
+    if (e.target.tagName == "BUTTON") {
         // 1.izbrisati sve poruke sa ekrana
         chatUI1.clear();
         // 2.pozvati promenu sobe
@@ -151,16 +112,16 @@ navRooms.addEventListener('click', e => {
         chatroom2.updateRoom(e.target.id);
         // 3.prikazati chatove
         chatroom2.getChats(data => {
-        chatUI1.templateLI(data);
+            chatUI1.templateLI(data);
 
-        for(let i = 0; i < btnsRooms.length; i++){
-            btnsRooms[i].classList.remove('active');
-        }
-        e.target.classList.add('active');
-        
-    });
-    // 4. Postaviti u local storage da smo presli u neku drugu sobu
-    localStorage.setItem('room', e.target.id); //a moze i u metodi updateRoom();
+            for (let i = 0; i < btnsRooms.length; i++) {
+                btnsRooms[i].classList.remove('active');
+            }
+            e.target.classList.add('active');
+
+        });
+        // 4. Postaviti u local storage da smo presli u neku drugu sobu
+        localStorage.setItem('room', e.target.id); //a moze i u metodi updateRoom();
     }
 });
 

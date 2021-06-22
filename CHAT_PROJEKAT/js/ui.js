@@ -52,20 +52,23 @@ export default class ChatUI{
     templateLI(data){
         let date = data.created_at.toDate();
 
-        let li = `
-        <li>
+        let listItem = `
+    
         <span class="name">${data.username} : </span> <span class="msg">${data.message}</span> <br>
         <span class="date">${this.formatDate(date)}</span>
-        </li>
+
         `;
 
-        this.ul.innerHTML += li;
+        let li = document.createElement('li');
+        li.innerHTML = listItem;
+
+        this.ul.appendChild(li);
         this.ul.scrollTop = this.ul.scrollHeight; //da prikazuje poslednje poruke
 
-        if(data.username == localStorage.username){
-            this.ul.style.textAlign = "left";
+        if(localStorage.username == data.username){
+            li.setAttribute('style', "float: right; background-color:rgba(107, 185, 240, 0.5); border-radius: 15px 0px 15px 15px;");
         } else {
-            this.ul.style.textAlign = "right";
+            li.setAttribute('style', "float: left; background-color: rgba(211, 211, 211, 0.7); border-radius: 0px 15px 15px 15px;");
         }
     }
     clear(){
