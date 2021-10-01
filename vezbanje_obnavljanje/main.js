@@ -59,5 +59,42 @@ if(d1 > d2){
 }
 
 // Radno vreme jedne programerske firme je od 9h do 17h. Preuzeti vreme sa računara i ispitati da li u to vreme firma radi ili ne radi.
+let start = 9;
+let end = 17;
 
+if(time < 9 || time >= end){
+    console.log("Firma ne radi");
+} else {
+    console.log("Firma radi");
+}
 
+// Za uneti broj ispitati da li je paran ili nije. 
+let a = 9;
+if(a % 2 === 0){
+    console.log(`Broj ${a} je paran`);
+} else {
+    console.log(`Broj je ${a} neparan`);
+}
+
+// Za uneti broj ispisati da li je deljiv sa 3 ili ne.
+let b = 8;
+
+if(b % 3 == 0){
+    console.log(`Broj ${b} je deljiv sa 3`);
+} else {
+    console.log(`Broj ${b} nije deljiv sa 3`);
+}
+
+// Za dva uneta broja, od većeg učitanog broja oduzeti manji i rezultat ispisati na ekranu.
+if(a > b){
+    // console.log(a - b);
+    document.body.innerHTML = a - b;
+} else if(b > a){
+    // console.log(b - a);
+    document.body.innerHTML = b - a;
+
+} else {
+    // console.log('Brojevi su jednaki');
+    document.body.innerHTML = 'Brojevi su jednaki';
+
+}
