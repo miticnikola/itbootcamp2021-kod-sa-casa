@@ -70,6 +70,10 @@ export default class ChatUI{
         } else {
             li.setAttribute('style', "float: left; background-color: rgba(211, 211, 211, 0.7); border-radius: 0px 15px 15px 15px;");
         }
+
+        if(data.username == 'anonymus'){
+            li.setAttribute('style', "float: left; background-color:rgba(211, 211, 211, 0.7); border-radius: 15px 0px 15px 15px; border:2px solid #268d94");
+        }
     }
     clear(){
         this.ul.innerHTML = " ";

@@ -2,14 +2,14 @@ import Chatroom from './chat.js';
 import ChatUI from './ui.js';
 
 // DOM
+let ul = document.querySelector('ul');
 let ulChatList = document.querySelector('#messages');
 let msgSubmit = document.querySelector('#msgSubmit');
 let msgInput = document.querySelector('#message');
 let userForm = document.getElementById('user');
 let userInput = document.getElementById('userName');
-let userBtnSubmit = document.querySelector('#userSubmit');
 let navRooms = document.querySelector('#tasks');
-let btnsRooms = document.querySelectorAll('.btn')
+let btnsRooms = document.querySelectorAll('.btn');
 
 
 // Citamo iz lokalne memorije username ukoliko postoji, u suprotnom default username je anonymus
@@ -42,7 +42,7 @@ for (let i = 0; i < btnsRooms.length; i++) {
 let chatroom2 = new Chatroom(room(), username());
 
 // Kreiranje objekta klase ChatUI
-let chatUI1 = new ChatUI(ulChatList);
+let chatUI1 = new ChatUI(ul);
 
 // Kada se ucitava stranica prvi put, ispisemo cetove na njoj za sobu koju smo naveli
 chatroom2.getChats(data => {
