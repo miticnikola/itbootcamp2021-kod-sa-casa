@@ -98,3 +98,75 @@ if(a > b){
     document.body.innerHTML = 'Brojevi su jednaki';
 
 }
+
+// Naći koji je najveći od tri uneta broja a, b i c, korišćenjem logičkih operatora. 
+a = 12;
+b = 7;
+c = 311;
+
+
+// Nacin 1
+if(a > b && a > c){
+    console.log(`${a} je najveci broj`);
+} else if(b > a && b > c){
+    console.log(`${b} je najveci broj`);
+} else if(c > a && c > b){
+    console.log(`${c} je najveci broj`);
+} else {
+    console.log("Brojevi su jednaki");
+}
+
+// Nacin 2
+let max = a;
+
+if(max > b && max > c){
+    console.log(`${max} je najveci broj`);
+} else {
+    max = b;
+    if(max > a && max > c){
+        console.log(`${max} je najveci broj`);
+    } else {
+        max = c;
+        if(max > a && max > b){
+            console.log(`${max} je najveci broj`);
+        }
+    }
+}
+
+// Ispitati da li je godina prestupna. (godinu preuzeti iz vremena na Vašem računaru).
+// Godina je prestupna ako je deljiva sa 4 i nije deljiva sa 100 ili ako je deljiva sa 400.
+
+let year = date.getFullYear();
+
+if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+    console.log("Godina je prestupna");
+} else {
+    console.log("Godina nije prestupna");
+}
+
+// Jedan butik ima radno vreme od 9h do 20h radnim danima, a vikendom od 10h do 18h. Preuzeti dan i vreme sa računara i ispitati da li je butik trenutno otvoren.
+
+hour = date.getHours();
+day = date.getDay();
+
+console.log(hour, day);
+
+let startR = 9;
+let endR = 20;
+
+let startV = 10;
+let endV = 18;
+
+if(day > 5 || day == 0){
+    if(hour >= 10 && hour < 18){
+        console.log("Butik je otvoren.");
+    } else {
+        console.log("Butik je zatvoren.");
+    }
+} else {
+    if(hour >= 9 && hour < 20){
+        console.log("Butik je otvoren.");
+    } else {
+        console.log("Butik je zatvoren.");
+    } 
+};
