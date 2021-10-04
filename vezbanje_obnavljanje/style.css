@@ -7,3 +7,21 @@ td {
 .obojen {
     background-color: aqua;
 }
+
+span {
+    border: 1px solid yellowgreen;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.border {
+    border: 1px solid black;
+}
+.polje {
+    background-color: black;
+    color: white;
+}
