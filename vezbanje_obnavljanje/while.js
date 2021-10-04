@@ -60,3 +60,13 @@ while(i < n){
     }
     i++;
 }
+
+// Odrediti sumu brojeva od 1 do n
+i = 1;
+n = 4;
+let sum = 0;;
+while(i <= n){
+    sum += i;
+    i++;
+}
+console.log(sum);
