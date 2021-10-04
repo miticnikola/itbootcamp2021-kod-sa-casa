@@ -133,6 +133,18 @@ if(max > b && max > c){
     }
 }
 
+// Nacin 3 
+max = a;
+if(b > max){
+    max = b;
+}
+
+if(c > max){
+    max = c;
+}
+console.log(`Najveci broj je ${max}`);
+
+
 // Ispitati da li je godina prestupna. (godinu preuzeti iz vremena na Vašem računaru).
 // Godina je prestupna ako je deljiva sa 4 i nije deljiva sa 100 ili ako je deljiva sa 400.
 
@@ -148,8 +160,6 @@ if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
 
 hour = date.getHours();
 day = date.getDay();
-
-console.log(hour, day);
 
 let startR = 9;
 let endR = 20;
