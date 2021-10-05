@@ -84,6 +84,18 @@ console.log(br);
 
 
 // Dat je niz stavki za kupovinu (članovi niza su stringovi). Prolaskom kroz niz napraviti neuređenu listu i ispisati je u html dokument.
+let hrana = ['jaja', 'brasno', 'so', 'secer'];
+
+let ul = `<ul>`
+
+for(let i = 0; i < hrana.length; i++){
+    ul += `<li>${hrana[i]}</li>`;
+}
+
+ul += `</ul>`;
+
+document.body.innerHTML += ul;
+
 
 // Dat je niz imena košarkaškog tima. Prolaskom kroz niz formirati tabelu u čijim su redovima imena tima, i tabelu ispisati u html dokument.
 
