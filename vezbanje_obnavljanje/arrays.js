@@ -109,3 +109,8 @@ tabela += `</table>`;
 document.body.innerHTML += tabela;
 
 // Dat je niz stringova čiji su članovi putanje do slika. Prikazati sve sliku u html dokumentu sa putanjama navedenim u nizu.
+let img = ['img/0.jpg', 'img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'ananas.jpg'];
+
+for(let i = 0; i < img.length; i++){
+    document.body.innerHTML += `<img src="${img[i]}" style="width: 20%;">`;
+}
