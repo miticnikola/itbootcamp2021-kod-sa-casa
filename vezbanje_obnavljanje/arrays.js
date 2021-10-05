@@ -28,15 +28,60 @@ for(let i = 0; i < niz.length; i++){
 console.log(max);
 
 // Odrediti indeks maksimalnog elementa celobrojnog niza.
+let index = 0; 
 
+for(let i = 0; i < niz.length; i++){
+    if(max == niz[i]){
+        index = i;
+    }
+}
+console.log(index);
 
 
 // Odrediti broj elemenata celobrojnog niza koji su veći od srednje vrednosti.
 
-//  Odrediti broj parnih elemenata sa neparnim indeksom.
+let br = [2, 3, 7, 12, 35, 11, 19];
+suma = 0;
+let veceOdSrVr = 0;
 
-// Promeniti znak svakom elementu celobrojnog niza.
+
+for(let i = 0; i < br.length; i++){
+    suma += br[i];
+}
+
+let srVr = suma / br.length; 
+console.log(srVr);
+
+for(let i = 0; i < br.length; i++){
+    if(srVr < br[i]){
+        veceOdSrVr += 1;
+    }
+}
+console.log(veceOdSrVr);
+
+
+
+//  Odrediti broj parnih elemenata sa neparnim indeksom.
+let brParEl = 0;
+
+for(let i = 0; i < br.length; i++){
+    if(br[i] % 2 == 0 && i % 2 != 0){
+        brParEl += 1;
+    }
+}
+
+console.log(brParEl);
+
+
 //  Promeniti znak svakom neparnom elementu celobrojnog niza sa parnim indeksom.
+
+for(let i = 0; i < br.length; i++){
+    if(br[i] % 2 != 0 && i % 2 == 0){
+        br[i] *= -1;
+    }
+}
+console.log(br);
+
 
 // Dat je niz stavki za kupovinu (članovi niza su stringovi). Prolaskom kroz niz napraviti neuređenu listu i ispisati je u html dokument.
 
