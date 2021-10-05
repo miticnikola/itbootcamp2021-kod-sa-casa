@@ -98,5 +98,14 @@ document.body.innerHTML += ul;
 
 
 // Dat je niz imena košarkaškog tima. Prolaskom kroz niz formirati tabelu u čijim su redovima imena tima, i tabelu ispisati u html dokument.
+let timovi = ['zvezda', 'partizan', 'boston', 'lejkers', 'NBA'];
+let tabela = `<table>`;
+
+for(let i = 0; i < timovi.length; i++){
+    tabela += `<tr><td>${timovi[i]}</td></tr>`;
+}
+tabela += `</table>`;
+
+document.body.innerHTML += tabela;
 
 // Dat je niz stringova čiji su članovi putanje do slika. Prikazati sve sliku u html dokumentu sa putanjama navedenim u nizu.
