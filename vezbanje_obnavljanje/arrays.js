@@ -98,7 +98,7 @@ document.body.innerHTML += ul;
 
 
 // Dat je niz imena košarkaškog tima. Prolaskom kroz niz formirati tabelu u čijim su redovima imena tima, i tabelu ispisati u html dokument.
-let timovi = ['zvezda', 'partizan', 'boston', 'lejkers', 'NBA'];
+let timovi = ['zvezda', 'Apartizan', 'boston', 'alejkers', 'NBA'];
 let tabela = `<table>`;
 
 for(let i = 0; i < timovi.length; i++){
@@ -114,3 +114,37 @@ let img = ['img/0.jpg', 'img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'ananas.jpg'];
 for(let i = 0; i < img.length; i++){
     document.body.innerHTML += `<img src="${img[i]}" style="width: 20%;">`;
 }
+
+
+// Ispisati dužinu svakog elementa u nizu stringova. 
+for(let i = 0; i < timovi.length; i++){
+    console.log(timovi[i].length);
+}
+
+// Odrediti element u nizu stringova sa najvećom dužinom.
+let najvDuz = timovi[0].length;
+
+for(let i = 0; i < timovi.length; i++){
+    if(najvDuz < timovi[i].length){
+        najvDuz = timovi[i].length;
+    }
+}
+console.log(najvDuz);
+
+// Odrediti broj elemenata u nizu stringova koji sadrže slovo 'a’. 
+// for(let i = 0; i < timovi.length; i++){
+// }
+timovi.forEach(tim => {
+    if(tim.includes('a')){
+        console.log(tim);
+    }
+});
+
+// Odrediti broj elemenata u nizu stringova koji počinju na slovo 'a' ili 'A’. 
+
+timovi.forEach(tim => {
+    if(tim[0] == 'a' || tim[0] == 'A'){
+        console.log(tim);
+    };
+});
+
