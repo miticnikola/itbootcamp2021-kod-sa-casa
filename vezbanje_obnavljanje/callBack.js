@@ -26,9 +26,11 @@ let el = ["jaja", "brasno", "so"];
 
 let ispis = (niz, callback) => {
     let poruka = " ";
+    
     niz.forEach(elem => {
         poruka += elem + " ";
     });
+    
     callback(poruka);
 }
 
