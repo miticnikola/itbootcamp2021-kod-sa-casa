@@ -85,3 +85,103 @@ console.log(dan.brProsTemp());
 console.log(dan.tempIzmedju(5, 13));
 console.log(dan.leden());
 console.log(dan.nepovoljan());
+
+
+// OBJEKTI U NIZU
+
+let blog1 = {
+    naslov: 'Naslov1',
+    likes: 12,
+    dislikes: 15
+}
+
+let blog2 = {
+    naslov: 'Naslov2!',
+    likes: 7,
+    dislikes: 13
+}
+
+let blog3 = {
+    naslov: 'Naslov3',
+    likes: 30,
+    dislikes: 5
+}
+
+let blogs = [blog1, blog2, blog3];
+
+
+//Napraviti arrow funkciju kojoj se prosleđuje niz objekata, a ona ispisuje sve one naslove blogova koji imaju najmanje duplo više pozitivnih nego negativnih ocena
+
+
+let visePoz = niz => {
+    niz.forEach(blog => {
+        if(blog.likes / 2 >= blog.dislikes){
+            console.log(blog.naslov);
+        }
+    })
+};
+
+visePoz(blogs);
+
+// Napisati arrow funkciju kojoj se prosleđuje niz objekata a ona ispisuje sve naslove koji se završavaju uzvičnikom
+
+let uzv = niz => {
+    niz.forEach(blog => {
+        if(blog.naslov.endsWith('!')){
+            console.log(blog.naslov);
+        }
+    });
+}
+
+uzv(blogs);
+
+
+
+// OBJEKAT U OBJEKTU
+
+
+// Napraviti niz korisnika gde svaki od korisnika sadrži niz blogova. Svaki blog u ovom nizu je objekat.
+
+// Users
+let user1 = {
+    ime: 'Pera',
+    age: 15,
+    blogs: [blog1, blog2]
+}
+
+let user2 = {
+    ime: 'Jova',
+    age: 18,
+    blogs: [blog1, blog2, blog3]
+}
+
+let user3 = {
+    ime: 'Mika',
+    age: 25,
+    blogs: [blog2, blog3]
+}
+
+let users = [user1, user2, user3];
+
+
+// Ispisati imena onih autora koji imaju ispod 18 godina
+users.forEach(user => {
+    if(user.age < 18){
+        console.log(user.ime);
+    }
+});
+
+// Ispisati naslove onih blogova koji imaju više od 50 lajkova
+users.forEach(user => {
+    // user.blogs.forEach(blog => {
+        // if(blog.likes > 20){
+        //     console.log(blogs.naslov);
+        // }
+    // });
+
+    for(let i = 0; i < user.blogs.length; i++){
+        if(user.blogs[i].likes > 20){
+            console.log(user.blogs[i].naslov, user.ime);
+        }
+    }
+});
