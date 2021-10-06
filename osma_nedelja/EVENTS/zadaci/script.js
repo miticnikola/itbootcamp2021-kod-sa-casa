@@ -43,8 +43,8 @@ btnPlus.addEventListener('click', () => {
 btnMinus.addEventListener('click', () => {
     prikaz.style.color = "black";
     brojac--;
-    
-    if(brojac < 0){
+
+    if (brojac < 0) {
         brojac = 0;
         prikaz.style.color = "blue";
     }
@@ -69,9 +69,9 @@ let pPrikaz = document.getElementById('prikaziIme');
 // let ime = inputIme.value; -- ovako je greska jer je uvek value prvo prazan pa se tek onda ispisuje ime, i u konzoli ce nam ispisati prazan red + prikaz u sledecem redu
 
 btnPosalji.addEventListener('click', () => {
-   let upisanoIme = inputIme.value; //ovako je ispravno da ne bi bilo praznih linija
-   
-   pPrikaz.innerHTML = `Zdravo ` + upisanoIme; // ili `Zdravo ${upisanoIme}`;
+    let upisanoIme = inputIme.value; //ovako je ispravno da ne bi bilo praznih linija
+
+    pPrikaz.innerHTML = `Zdravo ` + upisanoIme; // ili `Zdravo ${upisanoIme}`;
 });
 // 6. Dopuniti 5. zadatak dodavanjem eventa i proizvoljnog alert-a, kada se klikne dva puta na dugme.
 
@@ -88,7 +88,7 @@ let pPrikaziPrezime = document.getElementById('prikaziPrezime');
 
 btnPosaljiPrezime.addEventListener('click', e => {
     e.preventDefault(); //da se spreci reloadovanje forme
-    console.log(e); 
+    console.log(e);
     pPrikaziPrezime.innerHTML = `Uneli ste prezime ${inputPrezime.value}`;
 });
 
@@ -101,7 +101,7 @@ let pRez1 = document.getElementById('rez1');
 
 btnIzracunaj1.addEventListener('click', e => {
     e.preventDefault();
-    pRez1.innerHTML = inputUnos1.value**2;
+    pRez1.innerHTML = inputUnos1.value ** 2;
     // pRez1.innerHTML = Number(inputUnos1.value)**2; === ukoliko je u HTML input type="text";
 });
 
@@ -126,7 +126,7 @@ btnIzracunaj3.addEventListener('click', e => {
     let pI = 3.14;
     // let pI = Math.pi; == ugradjena konstanta za Pi
 
-    pRez3.innerHTML = inputUnos3.value**2*pI;
+    pRez3.innerHTML = inputUnos3.value ** 2 * pI;
 });
 
 
@@ -139,8 +139,8 @@ let pIspis = document.getElementById('ispis');
 forma.addEventListener('submit', e => {
     e.preventDefault();
 
-    pIspis.innerHTML = 
-    `<ul>
+    pIspis.innerHTML =
+        `<ul>
         <li>Omiljeno pice: ${inputPice.value}</li>
         <li>Omiljeno jelo: ${inputJelo.value}</li>
     </ul>
