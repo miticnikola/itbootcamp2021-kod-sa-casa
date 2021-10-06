@@ -14,11 +14,13 @@
 
 // Za dan se smatra da je leden ukoliko nijedna temperatura izmerena tog dana nije iznosila iznad 0 stepeni. Metod vraća true ukoliko je dan bio leden, u suprotnom metod vraća false.
 
+// Dan je nepovoljan ako je razlika između neka dva uzastopna merenja veća od 8 stepeni. Metod vraća true ukoliko je dan bio nepovoljan, u suprotnom vraća false.
+
 let dan = {
     kisa: true,
     sunce: false,
     oblacno: true,
-    temp: [ 0, 0, 0, 0, 0],
+    temp: [ 3, 5, 7, 12, 19],
     prosek: function() {
         let zbir = 0;
         for(let i = 0; i < this.temp.length; i++){
@@ -54,6 +56,26 @@ let dan = {
             }  
         });
         return led;
+    },
+    nepovoljan: function(){
+        // nacin1
+
+        // let nepov = true;
+        // for(let i = 0; i < this.temp.length; i++){
+        //     if(this.temp[i] - this.temp[i + 1] < 8 || this.temp[i + 1] - this.temp[i] < 8){
+        //         nepov = false;
+        //         return nepov;
+        //     }
+        // }
+        // return nepov;
+        
+        // Nacin 2
+        for(let i = 0; i < this.temp.length; i++){
+            if(Math.abs(this.temp[i] - this.temp[i + 1]) > 8){
+                return true;
+            }
+        }
+        return false;
     }
 };
 
@@ -62,3 +84,4 @@ console.log(dan.prosek());
 console.log(dan.brProsTemp());
 console.log(dan.tempIzmedju(5, 13));
 console.log(dan.leden());
+console.log(dan.nepovoljan());
