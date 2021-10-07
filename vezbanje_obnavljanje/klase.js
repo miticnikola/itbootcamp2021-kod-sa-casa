@@ -13,11 +13,26 @@ class Film {
     set naslov(naslov){
         this._naslov = naslov;
     }
+
+    set reziser(reziser){
+        this._reziser = reziser;
+    }
  
+    set godIzdanja(godIzdanja){
+        this._godIzdanja = godIzdanja;
+    }
 
     // Geters
     get naslov(){
         return this._naslov;
+    }
+
+    get reziser(){
+        return this._reziser;
+    }
+
+    get godIzdanja(){
+        return this._godIzdanja;
     }
 }
 
