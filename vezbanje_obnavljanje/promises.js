@@ -79,3 +79,24 @@ watchTutProm()
 })
 .catch(error => {
     console.log(`!!!Error!!! Name: ${error.name}, message: ${error.message}.`);});
+
+
+
+// Promise.all()
+
+let promise1 = 3;
+let promise2 = Promise.resolve(3);
+// Isto je kao i:
+// let promise2 = new Promise(resolve => {
+//     resolve(3);
+// });
+
+let promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'foo');
+});
+
+console.log(promise2);
+
+Promise.all([promise1, promise2, promise3]).then(success => {
+    console.log(success);
+});
