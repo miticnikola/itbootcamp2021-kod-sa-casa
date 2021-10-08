@@ -138,7 +138,7 @@ imgs
             let div = document.createElement('div');
             // div.id = 'card';
 
-            div.setAttribute('style', 'border: 1px solid gray; text-align: center; color: red; width: 60%; margin: 0 auto;padding: 10px;margin-top: 10px; background-color: khaki;')
+            div.setAttribute('style', 'border: 1px solid gray; text-align: center; color: red; width: 25%; margin: 0 auto;padding: 10px;margin-top: 10px; background-color: khaki;')
 
             let title = document.createElement('h4');
             // title.id = 'title';
