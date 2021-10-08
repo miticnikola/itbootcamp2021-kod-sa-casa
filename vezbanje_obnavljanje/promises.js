@@ -18,30 +18,64 @@ p.then(message => {
 
 
 //Prevent Callback hall (Callback to promise)
-let userLeft = true;
-let userWatching = false;
+// let userLeft = true;
+// let userWatching = false;
 
-let watchTut = (callback, errorCallback) => {
-    if(userLeft){
-        errorCallback({
-            name: 'User left',
-            message: ':('
-        })
-    } else if(userWatching){
-        errorCallback({
-            name: 'User watch memes',
-            message: 'MemeMemeMemeMeme'
+// let watchTut = (callback, errorCallback) => {
+//     if(userLeft){
+//         errorCallback({
+//             name: 'User left',
+//             message: ':('
+//         })
+//     } else if(userWatching){
+//         errorCallback({
+//             name: 'User watch memes',
+//             message: 'MemeMemeMemeMeme'
 
-        })
-    } else {
-        callback('Approved');
-    }
-};
+//         })
+//     } else {
+//         callback('Approved');
+//     }
+// };
 
-// Dve callback funkcije unutar funkcije watchTut
-watchTut((success) => {
-    console.log(`Success: ${success}`);
-},
- (error) => {
-     console.log(`!!!Error!!! Name: ${error.name}, message: ${error.message}.`);
- });
+// // Dve callback funkcije unutar funkcije watchTut
+// watchTut((success) => {
+//     console.log(`Success: ${success}`);
+// },
+//  (error) => {
+//      console.log(`!!!Error!!! Name: ${error.name}, message: ${error.message}.`);
+//  });
+
+
+
+
+// From callback hell to promise
+
+ let userLeft = false;
+ let userWatching = true;
+
+ let watchTutProm = () => {
+     return new Promise((resolve, reject) => {
+        if(userLeft){
+            reject({
+                name: 'User left',
+                message: ':('
+            })
+        } else if(userWatching){
+            reject({
+                name: 'User watch memes',
+                message: 'MemeMemeMemeMeme'
+            })
+        } else {
+            resolve('Approved');
+        }
+     })
+ };
+
+
+watchTutProm()
+.then(success => {
+    console.log(`Succes: ${success}`);
+})
+.catch(error => {
+    console.log(`!!!Error!!! Name: ${error.name}, message: ${error.message}.`);});
