@@ -1,7 +1,7 @@
-let p = new Promise ((resolve, rejected) => {
+let p = new Promise((resolve, rejected) => {
     let p = 1 + 1;
 
-    if(p != 2){
+    if (p != 2) {
         resolve('Success');
     } else {
         rejected('Faild');
@@ -11,9 +11,9 @@ let p = new Promise ((resolve, rejected) => {
 p.then(message => {
     console.log('Ovo je uspesno: ' + message);
 })
-.catch(message => {
-    console.log('Ovo je neuspesno: ' + message);
-});
+    .catch(message => {
+        console.log('Ovo je neuspesno: ' + message);
+    });
 
 
 
@@ -51,17 +51,17 @@ p.then(message => {
 
 // From callback hell to promise
 
- let userLeft = false;
- let userWatching = true;
+let userLeft = false;
+let userWatching = true;
 
- let watchTutProm = () => {
-     return new Promise((resolve, reject) => {
-        if(userLeft){
+let watchTutProm = () => {
+    return new Promise((resolve, reject) => {
+        if (userLeft) {
             reject({
                 name: 'User left',
                 message: ':('
             })
-        } else if(userWatching){
+        } else if (userWatching) {
             reject({
                 name: 'User watch memes',
                 message: 'MemeMemeMemeMeme'
@@ -69,16 +69,17 @@ p.then(message => {
         } else {
             resolve('Approved');
         }
-     })
- };
+    })
+};
 
 
 watchTutProm()
-.then(success => {
-    console.log(`Succes: ${success}`);
-})
-.catch(error => {
-    console.log(`!!!Error!!! Name: ${error.name}, message: ${error.message}.`);});
+    .then(success => {
+        console.log(`Succes: ${success}`);
+    })
+    .catch(error => {
+        console.log(`!!!Error!!! Name: ${error.name}, message: ${error.message}.`);
+    });
 
 
 
@@ -100,3 +101,25 @@ console.log(promise2);
 Promise.all([promise1, promise2, promise3]).then(success => {
     console.log(success);
 });
+
+
+// Make HTTP request == fetching api
+
+let api = fetch("https://jsonplaceholder.typicode.com/posts");
+
+console.log(api);
+
+api
+    .then(response => {
+        return response.json();
+    })
+    .then(json => json.forEach(file => {
+        document.body.innerHTML += 
+        `
+        <p style="border: 1px solid green; margin: 10px; padding: 10px 5px;">
+            <span>${file.id})</span>
+            ${file.title}
+         </p>
+         `;
+    }))
+    .catch("ERROR: Something go wrong");
